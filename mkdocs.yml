@@ -1,0 +1,36 @@
+site_name: 凉白开的笔记本
+
+theme:
+  name: material
+  language: 'zh'
+  font:
+    text: 'SF'
+    code: 'SF Mono'
+
+# plugins:
+#   - git-revision-date-localized:
+#       enable_creation_date: true
+#   - search
+
+nav:
+  - 介绍: index.md
+
+markdown_extensions:
+  - admonition                                   # 注解块支持
+  - pymdownx.arithmatex                          # 数学公式的TeX语法支持
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:                              # 表情支持
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:                           # 任务清单支持
+      custom_checkbox: true
+  - pymdownx.tilde
+  - meta                                         # 元数据支持
