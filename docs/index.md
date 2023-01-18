@@ -1,21 +1,17 @@
-# Welcome to MkDocs
+# 凉白开的笔记本
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+记录学习以及所想的一切。
 
 
-测试测试1111111
-再次测试22222
+!!! note "告诉自己"
+    <div align="center" style="font-size:30px;font-weight:bold">
+        我要一步一步往上爬
+        <br/>
+        在最高点乘着叶片往前飞
+    </div>
+    <div align="right">
+        ——《蜗牛》周杰伦
+    </div>
+
+<center> <iframe src="//player.bilibili.com/player.html?bvid=BV1GP4y1M7Uc" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width = 100% height = 400> </iframe>
+</center>
