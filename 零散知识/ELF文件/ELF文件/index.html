@@ -924,7 +924,7 @@
 <p>目标文件在不同的系统或平台上具有不同的命名格式。</p>
 <p>在 Unix 和 x86-64 Linux 上目标文件统称为 <strong>ELF (Executable and Linkable Format, ELF)</strong>。</p>
 <h3 id="32-文件视角">3.2 文件视角<a class="headerlink" href="#32-文件视角" title="Permanent link">&para;</a></h3>
-<p>ELF 文件格式提供了两种不同的视角。</p>
+<p>ELF 文件格式提供了三种不同的视角，即可重定位目标文件和可执行目标文件（以及不讨论的共享目标文件）。</p>
 <p>在汇编器和链接器看来，ELF 文件是由 Section Header Table 描述的一系列 Section 的集合。</p>
 <p>而执行一个 ELF 文件时，在加载器（Loader）看来它是由 Program Header Table 描述的一系列 Segment 的集合。</p>
 <div class="admonition note">
@@ -949,9 +949,9 @@
 <p class="admonition-title">注意</p>
 <p>Section Header Table 和 Program Header Table 并不是一定要位于文件开头和结尾的，其位置由 ELF Header 指出，上图这么画只是为了清晰。</p>
 </div>
-<p>目标文件需要链接器做进一步处理，所以一定有 Section Header Table。</p>
-<p>可执行文件需要加载运行，所以一定有 Program Header Table。</p>
-<p>而共享库既要加载运行，又要在加载时做动态链接，所以既有 Section Header Table 又有 Program Header Table。</p>
+<p>可重定位目标文件需要链接器做进一步处理，所以一定有 Section Header Table。</p>
+<p>可执行目标文件需要加载运行，所以一定有 Program Header Table。</p>
+<p>而共享库目标文件既要加载运行，又要在加载时做动态链接，所以既有 Section Header Table 又有 Program Header Table。</p>
 <h3 id="33-可重定位目标文件">3.3 可重定位目标文件<a class="headerlink" href="#33-可重定位目标文件" title="Permanent link">&para;</a></h3>
 <h4 id="331-文件布局">3.3.1 文件布局<a class="headerlink" href="#331-文件布局" title="Permanent link">&para;</a></h4>
 <p>下面用<code>readelf</code>工具读出可重定位目标文件 max.o 的 ELF Header 和 Section Header Table，然后我们逐段分析。</p>
@@ -962,7 +962,7 @@
 <p>其中<code>.text</code>和<code>.data</code>是我们在汇编程序中声明的 Section，而其它 Section 是汇编器自动添加的。</p>
 <p><code>Addr</code>是这些段加载到内存中的地址（我们讲过程序中的地址都是虚拟地址），加载地址要在链接时填写，现在空缺，所以是全0。</p>
 <p><code>Off</code>和<code>Size</code>两列指出了各 Section 的文件地址，比如<code>.data</code>从文件地址 0x60 开始，一共 0x38 个字节。翻一下程序，<code>.data</code>中定义了 14 个 4 字节的整数，一共是 56 个字节，也就是 0x38 个。</p>
-<p>根据以上信息可以描绘出整个目标文件的布局。</p>
+<p>根据以上信息可以描绘出整个可重定位目标文件的布局。</p>
 <p><center></p>
 <table>
 <thead>
@@ -1011,7 +1011,7 @@
 </tbody>
 </table>
 <p></center></p>
-<p>这个文件不大，我们直接用<code>hexdump</code>工具把目标文件的字节全部打印出来看。</p>
+<p>这个文件不大，我们直接用<code>hexdump</code>工具把可重定位目标文件的字节全部打印出来看。</p>
 <p><center> <img alt="" src="../2023-01-19-15-00-49.png" /> </center></p>
 <h4 id="332-shstrtab-和-strtab">3.3.2 <code>.shstrtab</code> 和 <code>.strtab</code><a class="headerlink" href="#332-shstrtab-和-strtab" title="Permanent link">&para;</a></h4>
 <p><code>.shstrtab</code>和<code>.strtab</code>这两个 Section 中存放的都是 ASCII 码：</p>
@@ -1037,7 +1037,7 @@
 <h3 id="34-可执行目标文件">3.4 可执行目标文件<a class="headerlink" href="#34-可执行目标文件" title="Permanent link">&para;</a></h3>
 <p>生成可执行目标文件之后，ELF 文件信息也发生了相应变化</p>
 <h4 id="341-elf-header">3.4.1 ELF Header<a class="headerlink" href="#341-elf-header" title="Permanent link">&para;</a></h4>
-<p>先看可执行文件中 ELF Header 的变化。</p>
+<p>先看可执行目标文件中 ELF Header 的变化。</p>
 <p><img alt="" src="../2023-01-19-15-19-59.png" /></p>
 <h4 id="342-section-header">3.4.2 Section Header<a class="headerlink" href="#342-section-header" title="Permanent link">&para;</a></h4>
 <p>再看 Section Headers 的变化。</p>
@@ -1056,14 +1056,14 @@
 <h4 id="344-映射关系">3.4.4 映射关系<a class="headerlink" href="#344-映射关系" title="Permanent link">&para;</a></h4>
 <p>在加载时要求文件中的一页对应内存中的一页，对应关系如下图所示。</p>
 <p><img alt="" src="../2023-01-19-15-26-13.png" /></p>
-<p>这个可执行文件很小，总共也不超过一页大小，但是两个 Segment 必须加载到内存中两个不同的页面，因为 MMU 的权限保护机制是以页为单位的，一个页面只能设置一种权限。</p>
+<p>这个可执行目标文件很小，总共也不超过一页大小，但是两个 Segment 必须加载到内存中两个不同的页面，因为 MMU 的权限保护机制是以页为单位的，一个页面只能设置一种权限。</p>
 <p>此外还规定每个 Segment 在文件页面内偏移多少，那么加载到内存页面仍然偏移多少。比如第二个 Segment 在文件中的偏移是 0xa0，在内存页面<code>0x0804 9000</code>中的偏移仍然是 0xa0，所以是从<code>0x0804 90a0</code>开始，这样规定是为了简化链接器和加载器的实现。</p>
 <p>从上图也可以看出<code>.text段</code>的加载地址应该是<code>0x0804 8074</code>，也正是<code>_start</code>符号的地址和程序的入口地址。</p>
-<p>原来目标文件符号表中的<code>Value</code>都是相对地址，现在都改成绝对地址了。此外还多了三个符号<code>__bss_start</code>、<code>_edata</code>和<code>_end</code>，这些是在链接过程中添进去的，加载器可以利用这些信息把<code>.bss</code>段初始化为0。</p>
+<p>可重定位目标文件符号表中的<code>Value</code>都是相对地址，在可执行目标文件中都改成绝对地址了。此外还多了三个符号<code>__bss_start</code>、<code>_edata</code>和<code>_end</code>，这些是在链接过程中添进去的，加载器可以利用这些信息把<code>.bss</code>段初始化为0。</p>
 <h4 id="345-反汇编结果">3.4.5 反汇编结果<a class="headerlink" href="#345-反汇编结果" title="Permanent link">&para;</a></h4>
 <p>再看一下用<code>objdump</code>得到的可执行目标文件反汇编的结果：</p>
 <p><img alt="" src="../2023-01-19-15-30-35.png" /></p>
-<p>到此为止ELF文件的问题已介基本介绍。</p>
+<p>到此为止ELF文件的问题已介基本介绍（未对共享库目标文件进行讨论）。</p>
 
   <hr>
 <div class="md-source-file">
