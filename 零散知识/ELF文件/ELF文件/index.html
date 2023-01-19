@@ -1,0 +1,1131 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://liangbaikai1126.github.io/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/ELF%E6%96%87%E4%BB%B6/ELF%E6%96%87%E4%BB%B6/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+      <link rel="icon" href="../../../logo.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
+    
+    
+      
+        <title>ELF文件初步认识 - 凉白开的笔记本</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13.274 9.537v-.001l-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074ZM4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75Z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.484 4.484 0 0 1-.563-1.191 3.835 3.835 0 0 1-.05-2.063 4.647 4.647 0 0 1-2.025-.293.75.75 0 0 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.747.747 0 0 1 1.06 0 .748.748 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.425 2.425 0 0 1-.507-.441 3.075 3.075 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.884.884 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7 5.527c-.814-.68-1.75-1.462-2.692-2.619a3.737 3.737 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75Z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.756 2.756 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6.24 6.24 0 0 0-.26.16.952.952 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661.103-.067.207-.132.313-.195l.007-.004c.1-.061.182-.11.258-.161a.969.969 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.612.612 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1.01 1.01 0 0 0-.34.398ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.249 1.249 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429Zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.036.036 0 0 0-.004-.009l-.006-.006-.008-.001c-.003 0-.006.002-.009.004Z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.488 3.488 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.036 5.036 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.677 1.677 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06Zm.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.172.172 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173Z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Zm4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5ZM2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0Z"/></svg>');}</style>
+
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF:300,300i,400,400i,700,700i%7CSF+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"SF";--md-code-font:"SF Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#elf文件初步认识" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="凉白开的笔记本" class="md-header__button md-logo" aria-label="凉白开的笔记本" data-md-component="logo">
+      
+  <img src="../../../logo.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            凉白开的笔记本
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ELF文件初步认识
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/liangbaikai1126/liangbaikai1126.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    liangbaikai1126/凉白开的笔记本
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        主页
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        零散知识
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="凉白开的笔记本" class="md-nav__button md-logo" aria-label="凉白开的笔记本" data-md-component="logo">
+      
+  <img src="../../../logo.ico" alt="logo">
+
+    </a>
+    凉白开的笔记本
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/liangbaikai1126/liangbaikai1126.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    liangbaikai1126/凉白开的笔记本
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">主页</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="主页" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          主页
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">零散知识</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="零散知识" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          零散知识
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ELF文件初步认识
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ELF文件初步认识
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-引言" class="md-nav__link">
+    1 引言
+  </a>
+  
+    <nav class="md-nav" aria-label="1 引言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-预处理阶段" class="md-nav__link">
+    1.1 预处理阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-编译阶段" class="md-nav__link">
+    1.2 编译阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-汇编阶段" class="md-nav__link">
+    1.3 汇编阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-链接阶段" class="md-nav__link">
+    1.4 链接阶段
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-目标文件" class="md-nav__link">
+    2 目标文件
+  </a>
+  
+    <nav class="md-nav" aria-label="2 目标文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-三种目标文件形式" class="md-nav__link">
+    2.1 三种目标文件形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-链接器的作用" class="md-nav__link">
+    2.2 链接器的作用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-elf文件" class="md-nav__link">
+    3 ELF文件
+  </a>
+  
+    <nav class="md-nav" aria-label="3 ELF文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-命名格式" class="md-nav__link">
+    3.1 命名格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-文件视角" class="md-nav__link">
+    3.2 文件视角
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-可重定位目标文件" class="md-nav__link">
+    3.3 可重定位目标文件
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 可重定位目标文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-文件布局" class="md-nav__link">
+    3.3.1 文件布局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-shstrtab-和-strtab" class="md-nav__link">
+    3.3.2 .shstrtab 和 .strtab
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-reltext和symtab" class="md-nav__link">
+    3.2.3 .rel.text和.symtab
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-text节" class="md-nav__link">
+    3.3.3 .text节
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-可执行目标文件" class="md-nav__link">
+    3.4 可执行目标文件
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 可执行目标文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-elf-header" class="md-nav__link">
+    3.4.1 ELF Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-section-header" class="md-nav__link">
+    3.4.2 Section Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-program-header" class="md-nav__link">
+    3.4.3 Program Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344-映射关系" class="md-nav__link">
+    3.4.4 映射关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#345-反汇编结果" class="md-nav__link">
+    3.4.5 反汇编结果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-引言" class="md-nav__link">
+    1 引言
+  </a>
+  
+    <nav class="md-nav" aria-label="1 引言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-预处理阶段" class="md-nav__link">
+    1.1 预处理阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-编译阶段" class="md-nav__link">
+    1.2 编译阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-汇编阶段" class="md-nav__link">
+    1.3 汇编阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-链接阶段" class="md-nav__link">
+    1.4 链接阶段
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-目标文件" class="md-nav__link">
+    2 目标文件
+  </a>
+  
+    <nav class="md-nav" aria-label="2 目标文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-三种目标文件形式" class="md-nav__link">
+    2.1 三种目标文件形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-链接器的作用" class="md-nav__link">
+    2.2 链接器的作用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-elf文件" class="md-nav__link">
+    3 ELF文件
+  </a>
+  
+    <nav class="md-nav" aria-label="3 ELF文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-命名格式" class="md-nav__link">
+    3.1 命名格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-文件视角" class="md-nav__link">
+    3.2 文件视角
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-可重定位目标文件" class="md-nav__link">
+    3.3 可重定位目标文件
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 可重定位目标文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-文件布局" class="md-nav__link">
+    3.3.1 文件布局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-shstrtab-和-strtab" class="md-nav__link">
+    3.3.2 .shstrtab 和 .strtab
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-reltext和symtab" class="md-nav__link">
+    3.2.3 .rel.text和.symtab
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-text节" class="md-nav__link">
+    3.3.3 .text节
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-可执行目标文件" class="md-nav__link">
+    3.4 可执行目标文件
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 可执行目标文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-elf-header" class="md-nav__link">
+    3.4.1 ELF Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-section-header" class="md-nav__link">
+    3.4.2 Section Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-program-header" class="md-nav__link">
+    3.4.3 Program Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344-映射关系" class="md-nav__link">
+    3.4.4 映射关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#345-反汇编结果" class="md-nav__link">
+    3.4.5 反汇编结果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="elf文件初步认识">ELF文件初步认识<a class="headerlink" href="#elf文件初步认识" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">本文为转载</p>
+<ul>
+<li><a href="https://blog.csdn.net/daide2012/article/details/73065204">原文链接</a></li>
+</ul>
+</div>
+<h2 id="1-引言">1 引言<a class="headerlink" href="#1-引言" title="Permanent link">&para;</a></h2>
+<p>在讲解 ELF 文件格式之前，我们来回顾一下，一个用C语言编写的高级语言程序从编写到打包、再到编译执行的基本过程。我们知道在 CPU 上执行的是低级别的机器语言，从高级语言到低级别的机器语言肯定是要经过翻译过程，这个过程大体的过程如下图所示:</p>
+<p><img alt="" src="../2023-01-19-13-21-59.png" /></p>
+<p>在 Unix 系统中，从源文件到可执行目标文件是由编译驱动程序完成的，如大名鼎鼎的 gcc，翻译过程包括图中的四个阶段；</p>
+<h3 id="11-预处理阶段">1.1 预处理阶段<a class="headerlink" href="#11-预处理阶段" title="Permanent link">&para;</a></h3>
+<p>预处理器（cpp）根据以字符<code>#</code>开头的命令修给原始的C程序，结果得到另一个C程序，通常以 .i 作为文件扩展名。</p>
+<p>主要是进行**文本替换、宏展开、删除注释**这类简单工作。</p>
+<p>对应的命令：linux&gt; <code>gcc -E hello.c hello.i</code></p>
+<h3 id="12-编译阶段">1.2 编译阶段<a class="headerlink" href="#12-编译阶段" title="Permanent link">&para;</a></h3>
+<p>编译器将文本文件 hello.i 翻译成 hello.s，包含相应的汇编语言程序</p>
+<p>对应的命令： linux&gt; <code>gcc -S hello.c hello.s</code></p>
+<h3 id="13-汇编阶段">1.3 汇编阶段<a class="headerlink" href="#13-汇编阶段" title="Permanent link">&para;</a></h3>
+<p>将.s文件翻译成机器语言指令，把这些指令打包成一种叫做 <strong>可重定位目标程序的格式</strong>，并将结果保存在目标文件 .o 中（把汇编语言翻译成机器语言的过程）。</p>
+<p>把一个源程序翻译成目标程序的工作过程分为五个阶段：</p>
+<ul>
+<li>
+<p>词法分析</p>
+</li>
+<li>
+<p>语法分析</p>
+</li>
+<li>
+<p>语义检查和中间代码生成</p>
+</li>
+<li>
+<p>代码优化</p>
+</li>
+<li>
+<p>目标代码生成</p>
+</li>
+</ul>
+<p>主要是进行 <strong>词法分析</strong> 和 <strong>语法分析</strong>，又称为源程序分析，分析过程中发现有语法错误，给出提示信息。</p>
+<p>对应的命令： linux&gt; <code>gcc -c hello.c hello.o</code></p>
+<h3 id="14-链接阶段">1.4 链接阶段<a class="headerlink" href="#14-链接阶段" title="Permanent link">&para;</a></h3>
+<p>此时 hello 程序调用了 printf 函数。printf 函数存在于一个名为 printf.o 的单独的预编译目标文件中。</p>
+<p><strong>链接器（ld）</strong> 就负责处理把这个文件并入到 hello.o 程序中，结果得到 hello 文件，一个可执行文件。最后可执行文件加载到储存器后由系统负责执行, 函数库一般分为 <strong>静态库</strong> 和 <strong>动态库</strong> 两种。</p>
+<p><strong>静态库</strong> 是指编译链接时，把库文件的代码全部加入到可执行文件中，因此生成的文件比较大，但在运行时也就不再需要库文件了。其后缀名一般为 .a。</p>
+<p><strong>动态库</strong> 与之相反，在编译链接时并没有把库文件的代码加入到可执行文件中，而是在程序执行时由运行时链接文件加载库，这样可以节省系统的开销。其一般后缀名为 .so，gcc 在编译时默认使用动态库。</p>
+<h2 id="2-目标文件">2 目标文件<a class="headerlink" href="#2-目标文件" title="Permanent link">&para;</a></h2>
+<p>由上面的过程，我们可以看出在经过汇编器和连接器作用后都会输出一个目标文件，那这两个目标文件有什么样的区别呢？说到这里我们先引入目标文件的形式。</p>
+<h3 id="21-三种目标文件形式">2.1 三种目标文件形式<a class="headerlink" href="#21-三种目标文件形式" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>可重定位目标文件：包含二进制代码和数据，其形式可以和其他目标文件进行合并，创建一个可执行目标文件。</p>
+</li>
+<li>
+<p>可执行目标文件：包含二进制代码和数据，可直接被加载器加载执行。</p>
+</li>
+<li>
+<p>共享目标文件：可被动态的加载和链接（本文暂时不讨论）。</p>
+</li>
+</ul>
+<p>由此可知由汇编器生成的就是 <strong>可重定位目标文件</strong>，经过链接器作用后才生成 <strong>可执行目标文件</strong>。</p>
+<h3 id="22-链接器的作用">2.2 链接器的作用<a class="headerlink" href="#22-链接器的作用" title="Permanent link">&para;</a></h3>
+<p>链接器的作用就是以一组可重定位目标文件作为输入，生成可加载和运行的可执行目标文件，具体需要完成以下两个工作：</p>
+<ul>
+<li>
+<p>符号解析：符号解析的目的是将目标文件中每个符号（静态变量、函数、全局变量）和其定义进行关联。</p>
+</li>
+<li>
+<p>重定位：将每个符号的定义与具体在虚拟内存中的位置进行关联。</p>
+</li>
+</ul>
+<p>最终生成可执行目标文件。</p>
+<p>说到这里好像还是没有说清楚这两种目标文件有什么区别，我们还是先把这个问题放一下，相信你看完下一节，应该会有答案，下面我们开始引入目标文件ELF文件。</p>
+<h2 id="3-elf文件">3 ELF文件<a class="headerlink" href="#3-elf文件" title="Permanent link">&para;</a></h2>
+<h3 id="31-命名格式">3.1 命名格式<a class="headerlink" href="#31-命名格式" title="Permanent link">&para;</a></h3>
+<p>目标文件在不同的系统或平台上具有不同的命名格式。</p>
+<p>在 Unix 和 x86-64 Linux 上目标文件统称为 <strong>ELF (Executable and Linkable Format, ELF)</strong>。</p>
+<h3 id="32-文件视角">3.2 文件视角<a class="headerlink" href="#32-文件视角" title="Permanent link">&para;</a></h3>
+<p>ELF 文件格式提供了两种不同的视角。</p>
+<p>在汇编器和链接器看来，ELF 文件是由 Section Header Table 描述的一系列 Section 的集合。</p>
+<p>而执行一个 ELF 文件时，在加载器（Loader）看来它是由 Program Header Table 描述的一系列 Segment 的集合。</p>
+<div class="admonition note">
+<p class="admonition-title">关于 Section 和 Segment</p>
+<p>我们在汇编程序中用<code>.section</code>声明的 Section 会成为目标文件中的 Section。此外汇编器还会自动添加一些 Section（比如符号表）。</p>
+<p>Segment 是指在程序运行时加载到内存的具有相同属性的区域，由一个或多个 Section 组成。比如有两个 Section 都要求加载到内存后可读可写，就属于同一个 Segment。有些 Section 只对汇编器和链接器有意义，在运行时用不到，也不需要加载到内存，那么就不属于任何 Segment。</p>
+</div>
+<p><img alt="" src="../2023-01-19-14-14-11.png" /></p>
+<ul>
+<li>汇编器和链接器视角（上图左侧）</li>
+</ul>
+<p>开头的 ELF Header 描述了体系结构和操作系统等基本信息，并指出 Section Header Table 和 Program Header Table 在文件中的什么位置。</p>
+<p>Program Header Table 在汇编和链接过程中没有用到。</p>
+<p>Section Header Table 中保存了所有 Section 的描述信息。</p>
+<ul>
+<li>加载器视角（上图右侧）</li>
+</ul>
+<p>开头是 ELF Header。</p>
+<p>Program Header Table 中保存了所有 Segment 的描述信息。</p>
+<p>Section Header Table 在加载过程中没有用到。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>Section Header Table 和 Program Header Table 并不是一定要位于文件开头和结尾的，其位置由 ELF Header 指出，上图这么画只是为了清晰。</p>
+</div>
+<p>目标文件需要链接器做进一步处理，所以一定有 Section Header Table。</p>
+<p>可执行文件需要加载运行，所以一定有 Program Header Table。</p>
+<p>而共享库既要加载运行，又要在加载时做动态链接，所以既有 Section Header Table 又有 Program Header Table。</p>
+<h3 id="33-可重定位目标文件">3.3 可重定位目标文件<a class="headerlink" href="#33-可重定位目标文件" title="Permanent link">&para;</a></h3>
+<h4 id="331-文件布局">3.3.1 文件布局<a class="headerlink" href="#331-文件布局" title="Permanent link">&para;</a></h4>
+<p>下面用<code>readelf</code>工具读出可重定位目标文件 max.o 的 ELF Header 和 Section Header Table，然后我们逐段分析。</p>
+<p><img alt="" src="../2023-01-19-14-42-03.png" /></p>
+<p>接下来我们来看 Section Header Table 格式。</p>
+<p><img alt="" src="../2023-01-19-14-42-24.png" /></p>
+<p>从 Section Header 中读出各 Section 的描述信息。</p>
+<p>其中<code>.text</code>和<code>.data</code>是我们在汇编程序中声明的 Section，而其它 Section 是汇编器自动添加的。</p>
+<p><code>Addr</code>是这些段加载到内存中的地址（我们讲过程序中的地址都是虚拟地址），加载地址要在链接时填写，现在空缺，所以是全0。</p>
+<p><code>Off</code>和<code>Size</code>两列指出了各 Section 的文件地址，比如<code>.data</code>从文件地址 0x60 开始，一共 0x38 个字节。翻一下程序，<code>.data</code>中定义了 14 个 4 字节的整数，一共是 56 个字节，也就是 0x38 个。</p>
+<p>根据以上信息可以描绘出整个目标文件的布局。</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">起始文件地址</th>
+<th align="center">Section 或 Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">ELF Header</td>
+</tr>
+<tr>
+<td align="center">0x34</td>
+<td align="center">.text</td>
+</tr>
+<tr>
+<td align="center">0x60</td>
+<td align="center">.data</td>
+</tr>
+<tr>
+<td align="center">0x98</td>
+<td align="center">.bss（此段为空）</td>
+</tr>
+<tr>
+<td align="center">0x98</td>
+<td align="center">.shstrtab</td>
+</tr>
+<tr>
+<td align="center">0xc8</td>
+<td align="center">Section Header Table</td>
+</tr>
+<tr>
+<td align="center">0x208</td>
+<td align="center">.symtab</td>
+</tr>
+<tr>
+<td align="center">0x288</td>
+<td align="center">.strtab</td>
+</tr>
+<tr>
+<td align="center">0x2b0</td>
+<td align="center">.rel.text</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>这个文件不大，我们直接用<code>hexdump</code>工具把目标文件的字节全部打印出来看。</p>
+<p><center> <img alt="" src="../2023-01-19-15-00-49.png" /> </center></p>
+<h4 id="332-shstrtab-和-strtab">3.3.2 <code>.shstrtab</code> 和 <code>.strtab</code><a class="headerlink" href="#332-shstrtab-和-strtab" title="Permanent link">&para;</a></h4>
+<p><code>.shstrtab</code>和<code>.strtab</code>这两个 Section 中存放的都是 ASCII 码：</p>
+<p><img alt="" src="../2023-01-19-15-04-27.png" /></p>
+<p>可见<code>.shstrtab</code>中保存着各 Section 的名字，<code>.strtab</code>中保存着程序中用到的符号的名字。每个名字都是以<code>'\0'</code>结尾的字符串。</p>
+<p>我们知道，C语言的全局变量如果在代码中没有初始化，就会在程序加载时用 0 初始化。</p>
+<p>这种数据属于<code>.bss</code>段，在加载时它和<code>.data</code>段一样都是可读可写的数据，但是在ELF文件中<code>.data</code>段需要占用一部分空间保存初始值，而<code>.bss</code>段则不需要。</p>
+<p>也就是说，<code>.bss</code>段在文件中只占一个 Section Header 而没有对应的 Section，程序加载时<code>.bss</code>段占多大内存空间在 Section Header 中描述。在我们这个例子中没有用到<code>.bss</code>段，以后我们会看到这样的例子。</p>
+<h4 id="323-reltext和symtab">3.2.3 <code>.rel.text</code>和<code>.symtab</code><a class="headerlink" href="#323-reltext和symtab" title="Permanent link">&para;</a></h4>
+<p>我们继续分析<code>readelf</code>输出的最后一部分，是从<code>.rel.text</code>和<code>.symtab</code>这两个 Section 中读出的信息。</p>
+<p><img alt="" src="../2023-01-19-15-11-43.png" /></p>
+<p><code>.rel.text</code>告诉链接器指令中的哪些地方需要重定位，我们在下一节讨论。</p>
+<p><code>.symtab</code>是符号表。<code>Ndx</code>列是每个符号所在的 Section 编号。例如<code>data_items</code>在第 3 个 Section 里（也就是<code>.data</code>）。各 Section 的编号见 Section Header Table。</p>
+<p><code>Value</code>列是每个符号所代表的地址。在目标文件中，符号地址都是相对于该符号所在 Section 的相对地址。比如<code>data_items</code>位于<code>.data</code>段的开头，所以地址是0。<code>_start</code>位于<code>.text</code>段的开头，所以地址也是0。</p>
+<p>但是<code>start_loop</code>和<code>loop_exit</code>相对于<code>.text</code>段的地址就不是0了。从<code>Bind</code>这一列可以看出<code>_start</code>这个符号是<code>GLOBAL</code>的，而其它符号是<code>LOCAL</code>的。</p>
+<div class="admonition note">
+<p class="admonition-title">小提示</p>
+<p><code>GLOBAL</code>符号是在汇编程序中用<code>.globl</code>指示声明过的符号。</p>
+</div>
+<h4 id="333-text节">3.3.3 <code>.text</code>节<a class="headerlink" href="#333-text节" title="Permanent link">&para;</a></h4>
+<p>通过使用<code>objdump</code>工具可以把程序中的机器指令进行反汇编（Disassemble），得到其汇编代码。</p>
+<p><img alt="" src="../2023-01-19-15-18-28.png" /></p>
+<h3 id="34-可执行目标文件">3.4 可执行目标文件<a class="headerlink" href="#34-可执行目标文件" title="Permanent link">&para;</a></h3>
+<p>生成可执行目标文件之后，ELF 文件信息也发生了相应变化</p>
+<h4 id="341-elf-header">3.4.1 ELF Header<a class="headerlink" href="#341-elf-header" title="Permanent link">&para;</a></h4>
+<p>先看可执行文件中 ELF Header 的变化。</p>
+<p><img alt="" src="../2023-01-19-15-19-59.png" /></p>
+<h4 id="342-section-header">3.4.2 Section Header<a class="headerlink" href="#342-section-header" title="Permanent link">&para;</a></h4>
+<p>再看 Section Headers 的变化。</p>
+<p><img alt="" src="../2023-01-19-15-20-31.png" /></p>
+<p><code>.text</code>和<code>.data</code>的加载地址分别改成了<code>0x0804 8074</code>和<code>0x0804 90a0</code>。</p>
+<p><code>.bss</code>段没有用到，所以被删掉了。</p>
+<p><code>.rel.text</code>段就是用于链接过程的，链接完了就没用了，所以也删掉了。</p>
+<h4 id="343-program-header">3.4.3 Program Header<a class="headerlink" href="#343-program-header" title="Permanent link">&para;</a></h4>
+<p>再看多出来的两个 Program Headers。</p>
+<p><img alt="" src="../2023-01-19-15-22-04.png" /></p>
+<p>多出来的 Program Header Table 描述了两个 Segment 的信息。</p>
+<p><code>.text</code>段和前面的 ELF Header、Program Header Table 一起组成一个 Segment（<code>FileSiz</code>指出总长度是 0x9e），<code>.data</code>段组成另一个 Segment（总长度是 0x38）。</p>
+<p><code>VirtAddr</code>列指出第一个 Segment 加载到虚拟地址<code>0x0804 8000</code>（注意在 x86 平台上后面的<code>PhysAddr</code>列是没有意义的），第二个 Segment 加载到地址<code>0x0804 90a0</code>。</p>
+<p><code>Flg</code>列指出第一个 Segment 的访问权限是可读可执行，第二个 Segment 的访问权限是可读可写。</p>
+<p>最后一列<code>Align</code>的值 0x1000（4K）是 x86 平台的内存页面大小。</p>
+<h4 id="344-映射关系">3.4.4 映射关系<a class="headerlink" href="#344-映射关系" title="Permanent link">&para;</a></h4>
+<p>在加载时要求文件中的一页对应内存中的一页，对应关系如下图所示。</p>
+<p><img alt="" src="../2023-01-19-15-26-13.png" /></p>
+<p>这个可执行文件很小，总共也不超过一页大小，但是两个 Segment 必须加载到内存中两个不同的页面，因为 MMU 的权限保护机制是以页为单位的，一个页面只能设置一种权限。</p>
+<p>此外还规定每个 Segment 在文件页面内偏移多少，那么加载到内存页面仍然偏移多少。比如第二个 Segment 在文件中的偏移是 0xa0，在内存页面<code>0x0804 9000</code>中的偏移仍然是 0xa0，所以是从<code>0x0804 90a0</code>开始，这样规定是为了简化链接器和加载器的实现。</p>
+<p>从上图也可以看出<code>.text段</code>的加载地址应该是<code>0x0804 8074</code>，也正是<code>_start</code>符号的地址和程序的入口地址。</p>
+<p>原来目标文件符号表中的<code>Value</code>都是相对地址，现在都改成绝对地址了。此外还多了三个符号<code>__bss_start</code>、<code>_edata</code>和<code>_end</code>，这些是在链接过程中添进去的，加载器可以利用这些信息把<code>.bss</code>段初始化为0。</p>
+<h4 id="345-反汇编结果">3.4.5 反汇编结果<a class="headerlink" href="#345-反汇编结果" title="Permanent link">&para;</a></h4>
+<p>再看一下用<code>objdump</code>得到的可执行目标文件反汇编的结果：</p>
+<p><img alt="" src="../2023-01-19-15-30-35.png" /></p>
+<p>到此为止ELF文件的问题已介基本介绍。</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2023</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2023</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
