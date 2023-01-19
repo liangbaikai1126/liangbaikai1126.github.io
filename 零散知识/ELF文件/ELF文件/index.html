@@ -860,7 +860,7 @@
 <p>在 Unix 系统中，从源文件到可执行目标文件是由编译驱动程序完成的，如大名鼎鼎的 gcc，翻译过程包括图中的四个阶段；</p>
 <h3 id="11-预处理阶段">1.1 预处理阶段<a class="headerlink" href="#11-预处理阶段" title="Permanent link">&para;</a></h3>
 <p>预处理器（cpp）根据以字符<code>#</code>开头的命令修给原始的C程序，结果得到另一个C程序，通常以 .i 作为文件扩展名。</p>
-<p>主要是进行**文本替换、宏展开、删除注释**这类简单工作。</p>
+<p>主要是进行 <strong>文本替换、宏展开、删除注释</strong> 这类简单工作。</p>
 <p>对应的命令：linux&gt; <code>gcc -E hello.c hello.i</code></p>
 <h3 id="12-编译阶段">1.2 编译阶段<a class="headerlink" href="#12-编译阶段" title="Permanent link">&para;</a></h3>
 <p>编译器将文本文件 hello.i 翻译成 hello.s，包含相应的汇编语言程序</p>
