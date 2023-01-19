@@ -40,7 +40,9 @@ plugins:
 nav:
   - 主页: 
     - index.md
-  
+  - 零散知识:
+    - 零散知识/index.md
+    - 零散知识/ELF文件/ELF文件.md
 
 markdown_extensions:
   - toc:
