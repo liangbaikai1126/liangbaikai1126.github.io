@@ -40,9 +40,17 @@ plugins:
 nav:
   - 主页: 
     - index.md
+  
+  - 语言:
+    - 语言/index.md
+    - C++:
+      - 语言/C++/index.md
+      - IO类:
+        - 语言/C++/IO类/string流/string流.md
+
   - 零散知识:
-    - 零散知识/index.md
-    - 零散知识/ELF文件/ELF文件.md
+    - 写在前面: 零散知识/index.md
+    - ELF文件: 零散知识/ELF文件/ELF文件.md
 
 markdown_extensions:
   - toc:
