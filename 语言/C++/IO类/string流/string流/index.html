@@ -529,6 +529,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-ostringstream-类" class="md-nav__link">
+    3 ostringstream 类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stringstream-类" class="md-nav__link">
+    4 stringstream 类
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -663,6 +677,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-ostringstream-类" class="md-nav__link">
+    3 ostringstream 类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stringstream-类" class="md-nav__link">
+    4 stringstream 类
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -724,6 +752,7 @@
 <h2 id="2-istringstream-类">2 istringstream 类<a class="headerlink" href="#2-istringstream-类" title="Permanent link">&para;</a></h2>
 <p>istringstream 类从 string 中提取数据，支持 &gt;&gt; 操作，默认分割符为空格。</p>
 <p>构造函数原型：<code>istringstream::istringstream(string str)</code></p>
+<p>常用成员函数：<code>str()：使 istringstream 对象返回一个 string 字符串</code></p>
 <p>示例程序：
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
@@ -735,19 +764,80 @@
 <span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">// 可用 while(iss &gt;&gt; t) 代替，默认空格分割</span>
 <span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">iss</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="c1">//此处手动指定用空格分隔</span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;#&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">iss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;#&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<p>输出结果：<code>Study#Hard#and#Day#Day#Up#</code></p>
+<p>输出结果：
+<div class="highlight"><pre><span></span><code>Study Hard and Day Day Up#Study
+Study Hard and Day Day Up#Hard 
+Study Hard and Day Day Up#and  
+Study Hard and Day Day Up#Day  
+Study Hard and Day Day Up#Day  
+Study Hard and Day Day Up#Up 
+</code></pre></div></p>
+<h2 id="3-ostringstream-类">3 ostringstream 类<a class="headerlink" href="#3-ostringstream-类" title="Permanent link">&para;</a></h2>
+<p>ostringstream 类将其他类型数据往 string 中写入，支持 &lt;&lt; 操作，默认分割符为空格。</p>
+<p>构造函数原型：<code>ostringstream::ostringstream(string str)</code></p>
+<p>常用成员函数：<code>str()：使 ostringstream 对象返回一个 string 字符串，或者使用其进行初始化</code></p>
+<p>示例程序：
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">114.514</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ostringstream</span><span class="w"> </span><span class="n">oss</span><span class="p">;</span>
+<span class="w">    </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">oss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">oss</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="s">&quot;1919810&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">oss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>输出结果：
+<div class="highlight"><pre><span></span><code>114.514
+1919810
+</code></pre></div></p>
+<h2 id="4-stringstream-类">4 stringstream 类<a class="headerlink" href="#4-stringstream-类" title="Permanent link">&para;</a></h2>
+<p>stringstream 类是 istringstream 和 ostringstream 的综合，支持 &lt;&lt;，&gt;&gt; 操作，通常用来数据转换。</p>
+<p>构造函数原型：<code>stringstream::stringstream(string str)</code></p>
+<p>常用成员函数：
+<div class="highlight"><pre><span></span><code>str()：使 stringstream 对象返回一个 string 字符串，或者使用其进行初始化。
+clear()：多次使用 stringstream 需要对其进行清空，否则会输出错误结果。
+</code></pre></div>
+示例程序：
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">114.514</span><span class="p">;</span>
+<span class="w">    </span><span class="n">stringstream</span><span class="w"> </span><span class="n">ss</span><span class="p">;</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//不能使用ss.str(&quot;&quot;)进行清空；否则结果不变</span>
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="s">&quot;1919810&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>输出结果：
+<div class="highlight"><pre><span></span><code>114.514
+1919810
+</code></pre></div></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
       
         <br>
         创建日期:
