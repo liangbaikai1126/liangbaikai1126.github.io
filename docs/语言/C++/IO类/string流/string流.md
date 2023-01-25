@@ -28,6 +28,8 @@ istringstream 类从 string 中提取数据，支持 >> 操作，默认分割符
 
 构造函数原型：`istringstream::istringstream(string str)`
 
+常用成员函数：`str()：使 istringstream 对象返回一个 string 字符串`
+
 示例程序：
 ```cpp
 #include <iostream>
@@ -40,10 +42,90 @@ int main() {
     string temp;
     // 可用 while(iss >> t) 代替，默认空格分割
     while(getline(iss, temp, ' ')) {//此处手动指定用空格分隔
-        cout << temp << "#";
+        cout << iss.str() << "#";
+        cout << temp << endl;
     }
     return 0;
 }
 ```
 
-输出结果：`Study#Hard#and#Day#Day#Up#`
+输出结果：
+```
+Study Hard and Day Day Up#Study
+Study Hard and Day Day Up#Hard 
+Study Hard and Day Day Up#and  
+Study Hard and Day Day Up#Day  
+Study Hard and Day Day Up#Day  
+Study Hard and Day Day Up#Up 
+```
+
+## 3 ostringstream 类
+
+ostringstream 类将其他类型数据往 string 中写入，支持 << 操作，默认分割符为空格。
+
+构造函数原型：`ostringstream::ostringstream(string str)`
+
+常用成员函数：`str()：使 ostringstream 对象返回一个 string 字符串，或者使用其进行初始化`
+
+示例程序：
+```cpp
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+int main() {
+    float num = 114.514;
+    ostringstream oss;
+    oss << num;
+    cout << oss.str() << endl;
+    oss.str("1919810");
+    cout << oss.str() << endl;
+    return 0;
+}
+```
+
+输出结果：
+```
+114.514
+1919810
+```
+
+## 4 stringstream 类
+
+stringstream 类是 istringstream 和 ostringstream 的综合，支持 <<，>> 操作，通常用来数据转换。
+
+构造函数原型：`stringstream::stringstream(string str)`
+
+常用成员函数：
+```
+str()：使 stringstream 对象返回一个 string 字符串，或者使用其进行初始化。
+clear()：多次使用 stringstream 需要对其进行清空，否则会输出错误结果。
+```
+示例程序：
+```cpp
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+int main() {
+    float num = 114.514;
+    stringstream ss;
+    string s;
+    ss << num;
+    ss >> s;
+    //不能使用ss.str("")进行清空；否则结果不变
+    ss.clear();
+    ss.str("1919810");
+    cout << s << endl;
+    cout << ss.str() << endl;
+    return 0;
+}
+```
+
+输出结果：
+```
+114.514
+1919810
+```
+
+
