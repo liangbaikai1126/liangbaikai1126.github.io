@@ -541,6 +541,26 @@
     4 stringstream 类
   </a>
   
+    <nav class="md-nav" aria-label="4 stringstream 类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-常用介绍" class="md-nav__link">
+    4.1 常用介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-clear-的用法介绍" class="md-nav__link">
+    4.2 clear() 的用法介绍
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -689,6 +709,26 @@
     4 stringstream 类
   </a>
   
+    <nav class="md-nav" aria-label="4 stringstream 类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-常用介绍" class="md-nav__link">
+    4.1 常用介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-clear-的用法介绍" class="md-nav__link">
+    4.2 clear() 的用法介绍
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -802,11 +842,11 @@ Study Hard and Day Day Up#Up
 1919810
 </code></pre></div></p>
 <h2 id="4-stringstream-类">4 stringstream 类<a class="headerlink" href="#4-stringstream-类" title="Permanent link">&para;</a></h2>
+<h3 id="41-常用介绍">4.1 常用介绍<a class="headerlink" href="#41-常用介绍" title="Permanent link">&para;</a></h3>
 <p>stringstream 类是 istringstream 和 ostringstream 的综合，支持 &lt;&lt;，&gt;&gt; 操作，通常用来数据转换。</p>
 <p>构造函数原型：<code>stringstream::stringstream(string str)</code></p>
 <p>常用成员函数：
 <div class="highlight"><pre><span></span><code>str()：使 stringstream 对象返回一个 string 字符串，或者使用其进行初始化。
-clear()：多次使用 stringstream 需要对其进行清空，否则会输出错误结果。
 </code></pre></div>
 示例程序：
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -819,18 +859,89 @@ clear()：多次使用 stringstream 需要对其进行清空，否则会输出�
 <span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
 <span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
 <span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">//不能使用ss.str(&quot;&quot;)进行清空；否则结果不变</span>
-<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="s">&quot;1919810&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p>输出结果：
 <div class="highlight"><pre><span></span><code>114.514
-1919810
 </code></pre></div></p>
+<h3 id="42-clear-的用法介绍">4.2 clear() 的用法介绍<a class="headerlink" href="#42-clear-的用法介绍" title="Permanent link">&para;</a></h3>
+<p>先来看一段代码：
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">114.514</span><span class="p">;</span>
+<span class="w">    </span><span class="n">stringstream</span><span class="w"> </span><span class="n">ss</span><span class="p">(</span><span class="s">&quot;1919810&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//ss.clear();</span>
+
+<span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+编写如上代码时，我们预期的输出结果为：<code>1919810 114.514</code></p>
+<p>实际输出结果为：<code>1919810 1919810</code></p>
+<p>我们发现，在后续步骤的<code>ss &lt;&lt; num</code>并未正确执行。 </p>
+<p>原因：在第一次调用完<code>&gt;&gt;</code>和<code>&lt;&lt;</code>后，来到了 end-of-file 的位置，此时 stringstream 会为其设置一个 eofbit 的标记位，标记其为已经到达 eof。 当 stringstream 设置了 eofbit，任何读取 eof 的操作都会失败。同时，会设置 failbit 的标记位，标记为失败状态。所以后面的操作都失败了。</p>
+<p>解决方法：clear 函数的作用就是清除掉所有的 error state 以及流状态，所以在代码前面加一个<code>ss.clear()</code>即可达到预期结果。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>clear 函数的作用并非是清空缓冲区，而是重置流状态。stringstream.str("") 可清空缓冲区，两个函数经常组合使用。</p>
+</div>
+<p>通过以下两个示例程序的对比，可以直观地体现出 clear 函数 和 str("") 的作用。</p>
+<p>只调用 clear 函数而不调用 str("")：
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">stringstream</span><span class="w"> </span><span class="n">ss</span><span class="p">;</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;114&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;514&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">//ss.str(&quot;&quot;);</span>
+
+<span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+输出结果：<code>114 114514</code> </p>
+<p>同时调用 clear() 和 str("")：
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">stringstream</span><span class="w"> </span><span class="n">ss</span><span class="p">;</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;114&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;514&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+输出结果：<code>114 514</code></p>
+<p>以上是对 string 流的初步介绍。</p>
 
   <hr>
 <div class="md-source-file">
