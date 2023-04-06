@@ -57,6 +57,7 @@ nav:
   - 零散知识:
     - 写在前面: 零散知识/index.md
     - ELF文件: 零散知识/ELF文件/ELF文件.md
+    - Raft算法: 零散知识/Raft算法/Raft算法.md
 
 markdown_extensions:
   - toc:
