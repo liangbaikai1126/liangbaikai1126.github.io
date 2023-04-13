@@ -49,7 +49,6 @@ nav:
   - 语言:
     - 语言/index.md
     - C++:
-      - 语言/C++/index.md
       - IO类:
         - 语言/C++/IO类/string流/string流.md
         - 语言/C++/IO类/格式控制/格式控制.md
