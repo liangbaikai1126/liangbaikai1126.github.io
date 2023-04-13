@@ -44,19 +44,20 @@ nav:
   - 深度学习:
     - 人工智能/index.md
     - CS329P:
-      - 人工智能/CS329P/1.1 课程介绍/课程介绍.md
+      - 人工智能/CS329P/1.1 课程介绍/1.md
+      - 人工智能/CS329P/1.2 数据获取/1.md
   
   - 语言:
     - 语言/index.md
     - C++:
       - IO类:
-        - 语言/C++/IO类/string流/string流.md
-        - 语言/C++/IO类/格式控制/格式控制.md
+        - 语言/C++/IO类/string流/1.md
+        - 语言/C++/IO类/格式控制/1.md
 
   - 零散知识:
     - 写在前面: 零散知识/index.md
-    - ELF文件: 零散知识/ELF文件/ELF文件.md
-    - Raft算法: 零散知识/Raft算法/Raft算法.md
+    - ELF文件: 零散知识/ELF文件/1.md
+    - Raft算法: 零散知识/Raft算法/1.md
 
 markdown_extensions:
   - toc:
