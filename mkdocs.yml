@@ -40,12 +40,14 @@ plugins:
 nav:
   - 主页: 
     - index.md
+
+  - 刷题:
+    - 递推:
+      - 刷题/递推/PAT A1093_CountPATs.md
+      - 刷题/递推/PAT A1001_Quick Sort.md
   
   - 深度学习:
     - 人工智能/index.md
-    - CS329P:
-      - 人工智能/CS329P/1.1 课程介绍/1.md
-      - 人工智能/CS329P/1.2 数据获取/1.md
   
   - 语言:
     - 语言/index.md
