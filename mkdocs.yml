@@ -45,6 +45,8 @@ nav:
     - 递推:
       - 刷题/递推/PAT A1093_CountPATs.md
       - 刷题/递推/PAT A1001_Quick Sort.md
+    - 质数:
+      - 刷题/质数/PAT A1059_Prime Factors.md
   
   - 深度学习:
     - 人工智能/index.md
