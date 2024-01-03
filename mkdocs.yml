@@ -47,6 +47,8 @@ nav:
       - 刷题/递推/PAT A1001_Quick Sort.md
     - 质数:
       - 刷题/质数/PAT A1059_Prime Factors.md
+    - 字符串处理:
+      - 刷题/字符串处理/PAT A1060_Are They Equal.md
   
   - 深度学习:
     - 人工智能/index.md
