@@ -47,11 +47,14 @@ nav:
       - 刷题/递推/PAT A1001_Quick Sort.md
     - 质数:
       - 刷题/质数/PAT A1059_Prime Factors.md
+      - 刷题/质数/PAT B1013_数素数.md
     - 字符串处理:
       - 刷题/字符串处理/PAT A1060_Are They Equal.md
     - 链表:
       - 刷题/链表/PAT A1032_Sharing.md
       - 刷题/链表/PAT A1052_Linked List Sorting.md
+    - 二叉树:
+      - 刷题/二叉树/PAT A1020_Tree Traversals.md
   
   - 深度学习:
     - 人工智能/index.md
