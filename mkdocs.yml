@@ -55,6 +55,8 @@ nav:
       - 刷题/链表/PAT A1052_Linked List Sorting.md
     - 二叉树:
       - 刷题/二叉树/PAT A1020_Tree Traversals.md
+    - DFS:
+      - 刷题/DFS/PAT A1053_Path of Equal Weight.md
   
   - 深度学习:
     - 人工智能/index.md
