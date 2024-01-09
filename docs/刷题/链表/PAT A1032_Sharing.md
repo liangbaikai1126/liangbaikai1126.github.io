@@ -11,7 +11,7 @@ typedef struct {
     int next;
 } Node;
 
-Node node [maxn];
+Node node[maxn];
 
 int main() {
     int s1, s2, n;

@@ -63,6 +63,8 @@ nav:
     - DFS:
       - 刷题/DFS/PAT A1053_Path of Equal Weight.md
       - 刷题/DFS/PAT A1103_Integer Factorization.md
+    - BFS:
+      - 刷题/BFS/PAT A1091_Acute Stroke.md
     - 栈:
       - 刷题/栈/PAT A1051_Pop Sequence.md
     - 队列:
