@@ -62,6 +62,7 @@ nav:
       - 刷题/二叉树/PAT A1043_Is it a Binary Search Tree.md
     - DFS:
       - 刷题/DFS/PAT A1053_Path of Equal Weight.md
+      - 刷题/DFS/PAT A1103_Integer Factorization.md
     - 栈:
       - 刷题/栈/PAT A1051_Pop Sequence.md
     - 队列:
