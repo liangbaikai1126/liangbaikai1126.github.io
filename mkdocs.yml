@@ -56,6 +56,7 @@ nav:
         - 刷题/链表/反转链表/LeetCode 25.K个一组反转链表.md
       - 刷题/链表/PAT A1032_Sharing.md
       - 刷题/链表/PAT A1052_Linked List Sorting.md
+      - 刷题/链表/PAT A1097_Deduplication on a Linked List.md
     - 二叉树:
       - 刷题/二叉树/PAT A1020_Tree Traversals.md
       - 刷题/二叉树/PAT A1043_Is it a Binary Search Treee.md
