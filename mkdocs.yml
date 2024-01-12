@@ -59,7 +59,9 @@ nav:
       - 刷题/链表/PAT A1097_Deduplication on a Linked List.md
     - 二叉树:
       - 刷题/二叉树/PAT A1020_Tree Traversals.md
+      - 刷题/二叉树/PAT A1086_Tree Traversals Again.md
       - 刷题/二叉树/PAT A1043_Is it a Binary Search Tree.md
+      - 刷题/二叉树/PAT A1102_Invert a Binary Tree.md
     - DFS:
       - 刷题/DFS/PAT A1053_Path of Equal Weight.md
       - 刷题/DFS/PAT A1103_Integer Factorization.md
