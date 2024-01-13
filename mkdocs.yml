@@ -57,11 +57,19 @@ nav:
       - 刷题/链表/PAT A1032_Sharing.md
       - 刷题/链表/PAT A1052_Linked List Sorting.md
       - 刷题/链表/PAT A1097_Deduplication on a Linked List.md
-    - 二叉树:
-      - 刷题/二叉树/PAT A1020_Tree Traversals.md
-      - 刷题/二叉树/PAT A1086_Tree Traversals Again.md
-      - 刷题/二叉树/PAT A1043_Is it a Binary Search Tree.md
-      - 刷题/二叉树/PAT A1102_Invert a Binary Tree.md
+    - 树:
+      - 二叉树的遍历:
+        - 刷题/树/二叉树的遍历/PAT A1020_Tree Traversals.md
+        - 刷题/树/二叉树的遍历/PAT A1086_Tree Traversals Again.md
+        - 刷题/树/二叉树的遍历/PAT A1102_Invert a Binary Tree.md
+      - 树的遍历:
+        - 刷题/树/树的遍历/PAT A1079_Total Sales of Supply Chain.md
+        - 刷题/树/树的遍历/PAT A1090_Highest Price in Supply Chain.md
+        - 刷题/树/树的遍历/PAT A1094_The Largest Generation.md
+        - 刷题/树/树的遍历/PAT A1106_Lowest Price in Supply Chain.md
+        - 刷题/树/树的遍历/PAT A1004_Counting Leaves.md
+        - 刷题/DFS/PAT A1053_Path of Equal Weight.md
+      - 刷题/树/PAT A1043_Is it a Binary Search Tree.md
     - DFS:
       - 刷题/DFS/PAT A1053_Path of Equal Weight.md
       - 刷题/DFS/PAT A1103_Integer Factorization.md
