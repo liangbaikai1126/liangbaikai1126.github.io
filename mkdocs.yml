@@ -118,9 +118,9 @@ markdown_extensions:
   - pymdownx.tilde
   - meta                                         # 元数据支持
 
-site_name: 凉白开的笔记本
+site_name: 大开的笔记本
 site_url: https://liangbaikai1126.github.io/
-repo_name: liangbaikai1126/凉白开的笔记本
+repo_name: liangbaikai1126/大开的笔记本
 repo_url: https://github.com/liangbaikai1126/liangbaikai1126.github.io
 extra_css:
   - stylesheets/extra.css
