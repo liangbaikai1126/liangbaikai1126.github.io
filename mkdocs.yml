@@ -68,13 +68,14 @@ nav:
         - 刷题/树/树的遍历/PAT A1094_The Largest Generation.md
         - 刷题/树/树的遍历/PAT A1106_Lowest Price in Supply Chain.md
         - 刷题/树/树的遍历/PAT A1004_Counting Leaves.md
-        - 刷题/DFS/PAT A1053_Path of Equal Weight.md
+        - 刷题/树/树的遍历/PAT A1053_Path of Equal Weight.md
       - 二叉查找树:
         - 刷题/树/二叉查找树/PAT A1043_Is it a Binary Search Tree.md
         - 刷题/树/二叉查找树/PAT A1064_Complete Binary Search Tree.md
         - 刷题/树/二叉查找树/PAT A1099_Build a Binary Search Tree.md
+      - 平衡二叉树:
+        - 刷题/树/平衡二叉树/PAT A1066_Root of AVL Tree.md
     - DFS:
-      - 刷题/DFS/PAT A1053_Path of Equal Weight.md
       - 刷题/DFS/PAT A1103_Integer Factorization.md
     - BFS:
       - 刷题/BFS/PAT A1091_Acute Stroke.md
