@@ -42,6 +42,10 @@ nav:
     - index.md
 
   - 刷题:
+    - 堆:
+      - 刷题/堆/PAT A1098_Insertion or Heap Sort.md
+    - 并查集:
+      - 刷题/并查集/PAT A1107_Social Clusters.md
     - 递推:
       - 刷题/递推/PAT A1093_CountPATs.md
       - 刷题/递推/PAT A1001_Quick Sort.md
