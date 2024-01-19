@@ -42,6 +42,12 @@ nav:
     - index.md
 
   - 刷题:
+    - 图:
+      - 图的遍历:
+        - 刷题/图/图的遍历/PAT A1013_Battle Over Cities.md
+        - 刷题/图/图的遍历/PAT A1021_Deepest Root.md
+        - 刷题/图/图的遍历/PAT A1034_Head of a Gang.md
+        - 刷题/图/图的遍历/PAT A1076_Forwards on Weibo.md
     - 堆:
       - 刷题/堆/PAT A1098_Insertion or Heap Sort.md
     - 并查集:
