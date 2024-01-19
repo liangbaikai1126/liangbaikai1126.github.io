@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://liangbaikai1126.github.io/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/ELF%E6%96%87%E4%BB%B6/1/">
+        <link rel="canonical" href="https://liangbaikai1126.github.io/%E5%88%B7%E9%A2%98/%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1076_Forwards%20on%20Weibo/">
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../PAT%20A1034_Head%20of%20a%20Gang/">
       
       
-        <link rel="next" href="../../Raft%E7%AE%97%E6%B3%95/1/">
+        <link rel="next" href="../../../%E5%A0%86/PAT%20A1098_Insertion%20or%20Heap%20Sort/">
       
       
-      <link rel="icon" href="../../../logo.ico">
+      <link rel="icon" href="../../../../logo.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
-        <title>ELF文件 - 大开的笔记本</title>
+        <title>PAT A1076 Forwards on Weibo - 大开的笔记本</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
       
       
   
@@ -86,9 +86,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -106,11 +106,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#elf-文件初识" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -121,9 +116,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="大开的笔记本" class="md-header__button md-logo" aria-label="大开的笔记本" data-md-component="logo">
+    <a href="../../../.." title="大开的笔记本" class="md-header__button md-logo" aria-label="大开的笔记本" data-md-component="logo">
       
-  <img src="../../../logo.ico" alt="logo">
+  <img src="../../../../logo.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -140,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ELF文件
+              PAT A1076 Forwards on Weibo
             
           </span>
         </div>
@@ -223,7 +218,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../../.." class="md-tabs__link">
           
   
     
@@ -239,23 +234,29 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../%E5%88%B7%E9%A2%98/%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1013_Battle%20Over%20Cities/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../PAT%20A1013_Battle%20Over%20Cities/" class="md-tabs__link">
           
   
     
@@ -281,7 +282,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-tabs__link">
+        <a href="../../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-tabs__link">
           
   
     
@@ -301,7 +302,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E8%AF%AD%E8%A8%80/" class="md-tabs__link">
+        <a href="../../../../%E8%AF%AD%E8%A8%80/" class="md-tabs__link">
           
   
     
@@ -317,13 +318,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
           
   
     
@@ -358,9 +357,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="大开的笔记本" class="md-nav__button md-logo" aria-label="大开的笔记本" data-md-component="logo">
+    <a href="../../../.." title="大开的笔记本" class="md-nav__button md-logo" aria-label="大开的笔记本" data-md-component="logo">
       
-  <img src="../../../logo.ico" alt="logo">
+  <img src="../../../../logo.ico" alt="logo">
 
     </a>
     大开的笔记本
@@ -410,7 +409,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -442,8 +441,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -478,12 +479,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -497,7 +498,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             刷题
@@ -508,8 +509,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -519,12 +522,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -538,7 +541,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             图
@@ -549,8 +552,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -566,12 +571,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
@@ -585,7 +590,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_1">
             <span class="md-nav__icon md-icon"></span>
             图的遍历
@@ -599,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1013_Battle%20Over%20Cities/" class="md-nav__link">
+      <a href="../PAT%20A1013_Battle%20Over%20Cities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1021_Deepest%20Root/" class="md-nav__link">
+      <a href="../PAT%20A1021_Deepest%20Root/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1034_Head%20of%20a%20Gang/" class="md-nav__link">
+      <a href="../PAT%20A1034_Head%20of%20a%20Gang/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -659,10 +664,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1076_Forwards%20on%20Weibo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -671,6 +683,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -740,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E5%A0%86/PAT%20A1098_Insertion%20or%20Heap%20Sort/" class="md-nav__link">
+      <a href="../../../%E5%A0%86/PAT%20A1098_Insertion%20or%20Heap%20Sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -810,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E5%B9%B6%E6%9F%A5%E9%9B%86/PAT%20A1107_Social%20Clusters/" class="md-nav__link">
+      <a href="../../../%E5%B9%B6%E6%9F%A5%E9%9B%86/PAT%20A1107_Social%20Clusters/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -882,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E9%80%92%E6%8E%A8/PAT%20A1093_CountPATs/" class="md-nav__link">
+      <a href="../../../%E9%80%92%E6%8E%A8/PAT%20A1093_CountPATs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -903,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E9%80%92%E6%8E%A8/PAT%20A1001_Quick%20Sort/" class="md-nav__link">
+      <a href="../../../%E9%80%92%E6%8E%A8/PAT%20A1001_Quick%20Sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -975,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E8%B4%A8%E6%95%B0/PAT%20A1059_Prime%20Factors/" class="md-nav__link">
+      <a href="../../../%E8%B4%A8%E6%95%B0/PAT%20A1059_Prime%20Factors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E8%B4%A8%E6%95%B0/PAT%20B1013_%E6%95%B0%E7%B4%A0%E6%95%B0/" class="md-nav__link">
+      <a href="../../../%E8%B4%A8%E6%95%B0/PAT%20B1013_%E6%95%B0%E7%B4%A0%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1066,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/PAT%20A1060_Are%20They%20Equal/" class="md-nav__link">
+      <a href="../../../%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/PAT%20A1060_Are%20They%20Equal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1185,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/PAT%20A1074_Reversing%20Linked%20List/" class="md-nav__link">
+      <a href="../../../%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/PAT%20A1074_Reversing%20Linked%20List/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1206,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/LeetCode%2025.K%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+      <a href="../../../%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/LeetCode%2025.K%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1235,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E9%93%BE%E8%A1%A8/PAT%20A1032_Sharing/" class="md-nav__link">
+      <a href="../../../%E9%93%BE%E8%A1%A8/PAT%20A1032_Sharing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1256,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E9%93%BE%E8%A1%A8/PAT%20A1052_Linked%20List%20Sorting/" class="md-nav__link">
+      <a href="../../../%E9%93%BE%E8%A1%A8/PAT%20A1052_Linked%20List%20Sorting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1277,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E9%93%BE%E8%A1%A8/PAT%20A1097_Deduplication%20on%20a%20Linked%20List/" class="md-nav__link">
+      <a href="../../../%E9%93%BE%E8%A1%A8/PAT%20A1097_Deduplication%20on%20a%20Linked%20List/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1020_Tree%20Traversals/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1020_Tree%20Traversals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1419,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1086_Tree%20Traversals%20Again/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1086_Tree%20Traversals%20Again/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1440,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1102_Invert%20a%20Binary%20Tree/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1102_Invert%20a%20Binary%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1520,7 +1533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1079_Total%20Sales%20of%20Supply%20Chain/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1079_Total%20Sales%20of%20Supply%20Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1541,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1090_Highest%20Price%20in%20Supply%20Chain/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1090_Highest%20Price%20in%20Supply%20Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1562,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1094_The%20Largest%20Generation/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1094_The%20Largest%20Generation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1583,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1106_Lowest%20Price%20in%20Supply%20Chain/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1106_Lowest%20Price%20in%20Supply%20Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1604,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1004_Counting%20Leaves/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1004_Counting%20Leaves/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1625,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1053_Path%20of%20Equal%20Weight/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1053_Path%20of%20Equal%20Weight/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1699,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1043_Is%20it%20a%20Binary%20Search%20Tree/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1043_Is%20it%20a%20Binary%20Search%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1720,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1064_Complete%20Binary%20Search%20Tree/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1064_Complete%20Binary%20Search%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1741,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1099_Build%20a%20Binary%20Search%20Tree/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1099_Build%20a%20Binary%20Search%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1811,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%91/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/PAT%20A1066_Root%20of%20AVL%20Tree/" class="md-nav__link">
+      <a href="../../../%E6%A0%91/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/PAT%20A1066_Root%20of%20AVL%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1889,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/DFS/PAT%20A1103_Integer%20Factorization/" class="md-nav__link">
+      <a href="../../../DFS/PAT%20A1103_Integer%20Factorization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1959,7 +1972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/BFS/PAT%20A1091_Acute%20Stroke/" class="md-nav__link">
+      <a href="../../../BFS/PAT%20A1091_Acute%20Stroke/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2029,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E6%A0%88/PAT%20A1051_Pop%20Sequence/" class="md-nav__link">
+      <a href="../../../%E6%A0%88/PAT%20A1051_Pop%20Sequence/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2099,7 +2112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B7%E9%A2%98/%E9%98%9F%E5%88%97/PAT%20A1056_Mice%20and%20Rice/" class="md-nav__link">
+      <a href="../../../%E9%98%9F%E5%88%97/PAT%20A1056_Mice%20and%20Rice/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2158,7 +2171,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-nav__link ">
+            <a href="../../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2218,7 +2231,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../%E8%AF%AD%E8%A8%80/" class="md-nav__link ">
+            <a href="../../../../%E8%AF%AD%E8%A8%80/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2335,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%AF%AD%E8%A8%80/C%2B%2B/IO%E7%B1%BB/string%E6%B5%81/1/" class="md-nav__link">
+      <a href="../../../../%E8%AF%AD%E8%A8%80/C%2B%2B/IO%E7%B1%BB/string%E6%B5%81/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2356,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%AF%AD%E8%A8%80/C%2B%2B/IO%E7%B1%BB/%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/1/" class="md-nav__link">
+      <a href="../../../../%E8%AF%AD%E8%A8%80/C%2B%2B/IO%E7%B1%BB/%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2397,8 +2410,6 @@
       
   
   
-    
-  
   
   
     
@@ -2419,17 +2430,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2446,7 +2457,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             零散知识
@@ -2459,30 +2470,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    ELF文件
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/ELF%E6%96%87%E4%BB%B6/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2491,254 +2482,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-引言" class="md-nav__link">
-    <span class="md-ellipsis">
-      1 引言
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1 引言">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-预处理阶段" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 预处理阶段
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-编译阶段" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 编译阶段
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-汇编阶段" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 汇编阶段
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-链接阶段" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.4 链接阶段
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-目标文件" class="md-nav__link">
-    <span class="md-ellipsis">
-      2 目标文件
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2 目标文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-三种目标文件形式" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 三种目标文件形式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-链接器的作用" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 链接器的作用
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-elf文件" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 ELF文件
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3 ELF文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-命名格式" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 命名格式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-文件视角" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 文件视角
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-可重定位目标文件" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 可重定位目标文件
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.3 可重定位目标文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#331-文件布局" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.1 文件布局
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#332-shstrtab-和-strtab" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.2 .shstrtab 和 .strtab
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#323-reltext和-symtab" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2.3 .rel.text和 .symtab
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#333-text节" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.3 .text节
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-可执行目标文件" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 可执行目标文件
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.4 可执行目标文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#341-elf-header" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.1 ELF Header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#342-section-header" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.2 Section Header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#343-program-header" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.3 Program Header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#344-映射关系" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.4 映射关系
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#345-反汇编结果" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.5 反汇编结果
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2751,7 +2494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Raft%E7%AE%97%E6%B3%95/1/" class="md-nav__link">
+      <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/Raft%E7%AE%97%E6%B3%95/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2789,244 +2532,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-引言" class="md-nav__link">
-    <span class="md-ellipsis">
-      1 引言
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1 引言">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-预处理阶段" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 预处理阶段
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-编译阶段" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 编译阶段
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-汇编阶段" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 汇编阶段
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-链接阶段" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.4 链接阶段
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-目标文件" class="md-nav__link">
-    <span class="md-ellipsis">
-      2 目标文件
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2 目标文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-三种目标文件形式" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 三种目标文件形式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-链接器的作用" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 链接器的作用
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-elf文件" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 ELF文件
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3 ELF文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-命名格式" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 命名格式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-文件视角" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 文件视角
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-可重定位目标文件" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 可重定位目标文件
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.3 可重定位目标文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#331-文件布局" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.1 文件布局
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#332-shstrtab-和-strtab" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.2 .shstrtab 和 .strtab
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#323-reltext和-symtab" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2.3 .rel.text和 .symtab
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#333-text节" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.3 .text节
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-可执行目标文件" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 可执行目标文件
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.4 可执行目标文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#341-elf-header" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.1 ELF Header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#342-section-header" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.2 Section Header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#343-program-header" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.3 Program Header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#344-映射关系" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.4 映射关系
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#345-反汇编结果" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4.5 反汇编结果
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -3044,203 +2549,72 @@
   
 
 
-<h1 id="elf-文件初识">ELF 文件初识<a class="headerlink" href="#elf-文件初识" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">本文为转载，存在部分修改，仅供个人使用</p>
-<ul>
-<li><a href="https://blog.csdn.net/daide2012/article/details/73065204">原文链接</a></li>
-</ul>
-</div>
-<h2 id="1-引言">1 引言<a class="headerlink" href="#1-引言" title="Permanent link">&para;</a></h2>
-<p>在讲解 ELF 文件格式之前，我们来回顾一下，一个用 C 语言编写的高级语言程序从编写到打包、再到编译执行的基本过程。我们知道在 CPU 上执行的是低级别的机器语言，从高级语言到低级别的机器语言肯定是要经过翻译过程，这个过程大体的过程如下图所示:</p>
-<p><img alt="" src="../2023-01-19-13-21-59.png" /></p>
-<p>在 Unix 系统中，从源文件到可执行目标文件是由编译驱动程序完成的，如大名鼎鼎的 gcc，翻译过程包括图中的四个阶段；</p>
-<h3 id="11-预处理阶段">1.1 预处理阶段<a class="headerlink" href="#11-预处理阶段" title="Permanent link">&para;</a></h3>
-<p>预处理器（cpp）根据以字符 <code>#</code>开头的命令修给原始的C程序，结果得到另一个C程序，通常以 .i 作为文件扩展名。</p>
-<p>主要是进行 <strong>文本替换、宏展开、删除注释</strong> 这类简单工作。</p>
-<p>对应的命令：linux&gt; <code>gcc -E hello.c hello.i</code></p>
-<h3 id="12-编译阶段">1.2 编译阶段<a class="headerlink" href="#12-编译阶段" title="Permanent link">&para;</a></h3>
-<p>编译器将文本文件 hello.i 翻译成 hello.s，包含相应的汇编语言程序</p>
-<p>对应的命令： linux&gt; <code>gcc -S hello.c hello.s</code></p>
-<h3 id="13-汇编阶段">1.3 汇编阶段<a class="headerlink" href="#13-汇编阶段" title="Permanent link">&para;</a></h3>
-<p>将 .s 文件翻译成机器语言指令，把这些指令打包成一种叫做 <strong>可重定位目标程序的格式</strong>，并将结果保存在目标文件 .o 中（把汇编语言翻译成机器语言的过程）。</p>
-<p>把一个源程序翻译成目标程序的工作过程分为五个阶段：</p>
-<ul>
-<li>词法分析</li>
-<li>语法分析</li>
-<li>语义检查和中间代码生成</li>
-<li>代码优化</li>
-<li>目标代码生成</li>
-</ul>
-<p>主要是进行 <strong>词法分析</strong> 和 <strong>语法分析</strong>，又称为源程序分析，分析过程中发现有语法错误，给出提示信息。</p>
-<p>对应的命令： linux&gt; <code>gcc -c hello.c hello.o</code></p>
-<h3 id="14-链接阶段">1.4 链接阶段<a class="headerlink" href="#14-链接阶段" title="Permanent link">&para;</a></h3>
-<p>此时 hello 程序调用了 printf 函数。printf 函数存在于一个名为 printf.o 的单独的预编译目标文件中。</p>
-<p><strong>链接器（ld）</strong> 就负责处理把这个文件并入到 hello.o 程序中，结果得到 hello 文件，一个可执行文件。最后可执行文件加载到储存器后由系统负责执行, 函数库一般分为 <strong>静态库</strong> 和 <strong>动态库</strong> 两种。</p>
-<p><strong>静态库</strong> 是指编译链接时，把库文件的代码全部加入到可执行文件中，因此生成的文件比较大，但在运行时也就不再需要库文件了。其后缀名一般为 .a。</p>
-<p><strong>动态库</strong> 与之相反，在编译链接时并没有把库文件的代码加入到可执行文件中，而是在程序执行时由运行时链接文件加载库，这样可以节省系统的开销。其一般后缀名为 .so，gcc 在编译时默认使用动态库。</p>
-<h2 id="2-目标文件">2 目标文件<a class="headerlink" href="#2-目标文件" title="Permanent link">&para;</a></h2>
-<p>由上面的过程，我们可以看出在经过汇编器和连接器作用后都会输出一个目标文件，那这两个目标文件有什么样的区别呢？说到这里我们先引入目标文件的形式。</p>
-<h3 id="21-三种目标文件形式">2.1 三种目标文件形式<a class="headerlink" href="#21-三种目标文件形式" title="Permanent link">&para;</a></h3>
-<ul>
-<li>可重定位目标文件：包含二进制代码和数据，其形式可以和其他目标文件进行合并，创建一个可执行目标文件。</li>
-<li>可执行目标文件：包含二进制代码和数据，可直接被加载器加载执行。</li>
-<li>共享目标文件：可被动态的加载和链接（本文暂时不讨论）。</li>
-</ul>
-<p>由此可知由汇编器生成的就是 <strong>可重定位目标文件</strong>，经过链接器作用后才生成 <strong>可执行目标文件</strong>。</p>
-<h3 id="22-链接器的作用">2.2 链接器的作用<a class="headerlink" href="#22-链接器的作用" title="Permanent link">&para;</a></h3>
-<p>链接器的作用就是以一组可重定位目标文件作为输入，生成可加载和运行的可执行目标文件，具体需要完成以下两个工作：</p>
-<ul>
-<li>符号解析：符号解析的目的是将目标文件中每个符号（静态变量、函数、全局变量）和其定义进行关联。</li>
-<li>重定位：将每个符号的定义与具体在虚拟内存中的位置进行关联。</li>
-</ul>
-<p>最终生成可执行目标文件。</p>
-<p>说到这里好像还是没有说清楚这两种目标文件有什么区别，我们还是先把这个问题放一下，相信你看完下一节，应该会有答案，下面我们开始引入目标文件即 ELF 文件。</p>
-<h2 id="3-elf文件">3 ELF文件<a class="headerlink" href="#3-elf文件" title="Permanent link">&para;</a></h2>
-<h3 id="31-命名格式">3.1 命名格式<a class="headerlink" href="#31-命名格式" title="Permanent link">&para;</a></h3>
-<p>目标文件在不同的系统或平台上具有不同的命名格式。</p>
-<p>在 Unix 和 x86-64 Linux 上目标文件统称为 <strong>ELF (Executable and Linkable Format, ELF)</strong>。</p>
-<h3 id="32-文件视角">3.2 文件视角<a class="headerlink" href="#32-文件视角" title="Permanent link">&para;</a></h3>
-<p>ELF 文件格式提供了三种不同的视角，即可重定位目标文件和可执行目标文件（以及不讨论的共享目标文件）。</p>
-<p>在汇编器和链接器看来，ELF 文件是由 Section Header Table 描述的一系列 Section 的集合，即可重定位目标文件。</p>
-<p>而执行一个 ELF 文件时，在加载器（Loader）看来它是由 Program Header Table 描述的一系列 Segment 的集合，即可执行目标文件。</p>
-<div class="admonition note">
-<p class="admonition-title">关于 Section 和 Segment</p>
-<p>我们在汇编程序中用 <code>.section</code>声明的 Section 会成为目标文件中的 Section。此外汇编器还会自动添加一些 Section（比如符号表）。</p>
-<p>Segment 是指在程序运行时加载到内存的具有相同属性的区域，由一个或多个 Section 组成。比如有两个 Section 都要求加载到内存后可读可写，就属于同一个 Segment。有些 Section 只对汇编器和链接器有意义，在运行时用不到，也不需要加载到内存，那么就不属于任何 Segment。</p>
-</div>
-<p><img alt="" src="../2023-01-19-14-14-11.png" /></p>
-<ul>
-<li>汇编器和链接器视角（上图左侧）</li>
-</ul>
-<p>开头的 ELF Header 描述了体系结构和操作系统等基本信息，并指出 Section Header Table 和 Program Header Table 在文件中的什么位置。</p>
-<p>Program Header Table 在汇编和链接过程中没有用到。</p>
-<p>Section Header Table 中保存了所有 Section 的描述信息。</p>
-<ul>
-<li>加载器视角（上图右侧）</li>
-</ul>
-<p>开头是 ELF Header。</p>
-<p>Program Header Table 中保存了所有 Segment 的描述信息。</p>
-<p>Section Header Table 在加载过程中没有用到。</p>
-<div class="admonition warning">
-<p class="admonition-title">注意</p>
-<p>Section Header Table 和 Program Header Table 并不是一定要位于文件开头和结尾的，其位置由 ELF Header 指出，上图这么画只是为了清晰。</p>
-</div>
-<p>可重定位目标文件需要链接器做进一步处理，所以一定有 Section Header Table。</p>
-<p>可执行目标文件需要加载运行，所以一定有 Program Header Table。</p>
-<p>而共享库目标文件既要加载运行，又要在加载时做动态链接，所以既有 Section Header Table 又有 Program Header Table。</p>
-<h3 id="33-可重定位目标文件">3.3 可重定位目标文件<a class="headerlink" href="#33-可重定位目标文件" title="Permanent link">&para;</a></h3>
-<h4 id="331-文件布局">3.3.1 文件布局<a class="headerlink" href="#331-文件布局" title="Permanent link">&para;</a></h4>
-<p>下面用 <code>readelf</code>工具读出可重定位目标文件 max.o 的 ELF Header 和 Section Header Table，然后我们逐段分析。</p>
-<p><img alt="" src="../2023-01-19-14-42-03.png" /></p>
-<p>接下来我们来看 Section Header Table 格式。</p>
-<p><img alt="" src="../2023-01-19-14-42-24.png" /></p>
-<p>从 Section Header 中读出各 Section 的描述信息。</p>
-<p>其中 <code>.text</code>和 <code>.data</code>是我们在汇编程序中声明的 Section，而其它 Section 是汇编器自动添加的。</p>
-<p><code>Addr</code>是这些段加载到内存中的地址（我们讲过程序中的地址都是虚拟地址），加载地址要在链接时填写，现在空缺，所以是全0。</p>
-<p><code>Off</code>和 <code>Size</code>两列指出了各 Section 的文件地址，比如 <code>.data</code>从文件地址 0x60 开始，一共 0x38 个字节。翻一下程序，<code>.data</code>中定义了 14 个 4 字节的整数，一共是 56 个字节，也就是 0x38 个。</p>
-<p>根据以上信息可以描绘出整个可重定位目标文件的布局。</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">起始文件地址</th>
-<th style="text-align: left;">Section 或 Header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">ELF Header</td>
-</tr>
-<tr>
-<td style="text-align: left;">0x34</td>
-<td style="text-align: left;">.text</td>
-</tr>
-<tr>
-<td style="text-align: left;">0x60</td>
-<td style="text-align: left;">.data</td>
-</tr>
-<tr>
-<td style="text-align: left;">0x98</td>
-<td style="text-align: left;">.bss（此段为空）</td>
-</tr>
-<tr>
-<td style="text-align: left;">0x98</td>
-<td style="text-align: left;">.shstrtab</td>
-</tr>
-<tr>
-<td style="text-align: left;">0xc8</td>
-<td style="text-align: left;">Section Header Table</td>
-</tr>
-<tr>
-<td style="text-align: left;">0x208</td>
-<td style="text-align: left;">.symtab</td>
-</tr>
-<tr>
-<td style="text-align: left;">0x288</td>
-<td style="text-align: left;">.strtab</td>
-</tr>
-<tr>
-<td style="text-align: left;">0x2b0</td>
-<td style="text-align: left;">.rel.text</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
-<p>这个文件不大，我们直接用 <code>hexdump</code>工具把可重定位目标文件的字节全部打印出来看。</p>
-<p><center> <img alt="" src="../2023-01-19-15-00-49.png" /> </center></p>
-<h4 id="332-shstrtab-和-strtab">3.3.2 <code>.shstrtab</code> 和 <code>.strtab</code><a class="headerlink" href="#332-shstrtab-和-strtab" title="Permanent link">&para;</a></h4>
-<p><code>.shstrtab</code>和 <code>.strtab</code>这两个 Section 中存放的都是 ASCII 码：</p>
-<p><img alt="" src="../2023-01-19-15-04-27.png" /></p>
-<p>可见 <code>.shstrtab</code>中保存着各 Section 的名字，<code>.strtab</code>中保存着程序中用到的符号的名字。每个名字都是以 <code>'\0'</code>结尾的字符串。</p>
-<p>我们知道，C语言的全局变量如果在代码中没有初始化，就会在程序加载时用 0 初始化。</p>
-<p>这种数据属于 <code>.bss</code>段，在加载时它和 <code>.data</code>段一样都是可读可写的数据，但是在ELF文件中 <code>.data</code>段需要占用一部分空间保存初始值，而 <code>.bss</code>段则不需要。</p>
-<p>也就是说，<code>.bss</code>段在文件中只占一个 Section Header 而没有对应的 Section，程序加载时 <code>.bss</code>段占多大内存空间在 Section Header 中描述。在我们这个例子中没有用到 <code>.bss</code>段，以后我们会看到这样的例子。</p>
-<h4 id="323-reltext和-symtab">3.2.3 <code>.rel.text</code>和 <code>.symtab</code><a class="headerlink" href="#323-reltext和-symtab" title="Permanent link">&para;</a></h4>
-<p>我们继续分析 <code>readelf</code>输出的最后一部分，是从 <code>.rel.text</code>和 <code>.symtab</code>这两个 Section 中读出的信息。</p>
-<p><img alt="" src="../2023-01-19-15-11-43.png" /></p>
-<p><code>.rel.text</code>告诉链接器指令中的哪些地方需要重定位，我们在下一节讨论。</p>
-<p><code>.symtab</code>是符号表。<code>Ndx</code>列是每个符号所在的 Section 编号。例如 <code>data_items</code>在第 3 个 Section 里（也就是 <code>.data</code>）。各 Section 的编号见 Section Header Table。</p>
-<p><code>Value</code>列是每个符号所代表的地址。在目标文件中，符号地址都是相对于该符号所在 Section 的相对地址。比如 <code>data_items</code>位于 <code>.data</code>段的开头，所以地址是0。<code>_start</code>位于 <code>.text</code>段的开头，所以地址也是0。</p>
-<p>但是 <code>start_loop</code>和 <code>loop_exit</code>相对于 <code>.text</code>段的地址就不是0了。从 <code>Bind</code>这一列可以看出 <code>_start</code>这个符号是 <code>GLOBAL</code>的，而其它符号是 <code>LOCAL</code>的。</p>
-<div class="admonition note">
-<p class="admonition-title">小提示</p>
-<p><code>GLOBAL</code>符号是在汇编程序中用 <code>.globl</code>指示声明过的符号。</p>
-</div>
-<h4 id="333-text节">3.3.3 <code>.text</code>节<a class="headerlink" href="#333-text节" title="Permanent link">&para;</a></h4>
-<p>通过使用 <code>objdump</code>工具可以把程序中的机器指令进行反汇编（Disassemble），得到其汇编代码。</p>
-<p><img alt="" src="../2023-01-19-15-18-28.png" /></p>
-<h3 id="34-可执行目标文件">3.4 可执行目标文件<a class="headerlink" href="#34-可执行目标文件" title="Permanent link">&para;</a></h3>
-<p>生成可执行目标文件之后，ELF 文件信息也发生了相应变化</p>
-<h4 id="341-elf-header">3.4.1 ELF Header<a class="headerlink" href="#341-elf-header" title="Permanent link">&para;</a></h4>
-<p>先看可执行目标文件中 ELF Header 的变化。</p>
-<p><img alt="" src="../2023-01-19-15-19-59.png" /></p>
-<h4 id="342-section-header">3.4.2 Section Header<a class="headerlink" href="#342-section-header" title="Permanent link">&para;</a></h4>
-<p>再看 Section Headers 的变化。</p>
-<p><img alt="" src="../2023-01-19-15-20-31.png" /></p>
-<p><code>.text</code>和 <code>.data</code>的加载地址分别改成了 <code>0x0804 8074</code>和 <code>0x0804 90a0</code>。</p>
-<p><code>.bss</code>段没有用到，所以被删掉了。</p>
-<p><code>.rel.text</code>段就是用于链接过程的，链接完了就没用了，所以也删掉了。</p>
-<h4 id="343-program-header">3.4.3 Program Header<a class="headerlink" href="#343-program-header" title="Permanent link">&para;</a></h4>
-<p>再看多出来的两个 Program Headers。</p>
-<p><img alt="" src="../2023-01-19-15-22-04.png" /></p>
-<p>多出来的 Program Header Table 描述了两个 Segment 的信息。</p>
-<p><code>.text</code>段和前面的 ELF Header、Program Header Table 一起组成一个 Segment（<code>FileSiz</code>指出总长度是 0x9e），<code>.data</code>段组成另一个 Segment（总长度是 0x38）。</p>
-<p><code>VirtAddr</code>列指出第一个 Segment 加载到虚拟地址 <code>0x0804 8000</code>（注意在 x86 平台上后面的 <code>PhysAddr</code>列是没有意义的），第二个 Segment 加载到地址 <code>0x0804 90a0</code>。</p>
-<p><code>Flg</code>列指出第一个 Segment 的访问权限是可读可执行，第二个 Segment 的访问权限是可读可写。</p>
-<p>最后一列 <code>Align</code>的值 0x1000（4K）是 x86 平台的内存页面大小。</p>
-<h4 id="344-映射关系">3.4.4 映射关系<a class="headerlink" href="#344-映射关系" title="Permanent link">&para;</a></h4>
-<p>在加载时要求文件中的一页对应内存中的一页，对应关系如下图所示。</p>
-<p><img alt="" src="../2023-01-19-15-26-13.png" /></p>
-<p>这个可执行目标文件很小，总共也不超过一页大小，但是两个 Segment 必须加载到内存中两个不同的页面，因为 MMU 的权限保护机制是以页为单位的，一个页面只能设置一种权限。</p>
-<p>此外还规定每个 Segment 在文件页面内偏移多少，那么加载到内存页面仍然偏移多少。比如第二个 Segment 在文件中的偏移是 0xa0，在内存页面 <code>0x0804 9000</code>中的偏移仍然是 0xa0，所以是从 <code>0x0804 90a0</code>开始，这样规定是为了简化链接器和加载器的实现。</p>
-<p>从上图也可以看出 <code>.text段</code>的加载地址应该是 <code>0x0804 8074</code>，也正是 <code>_start</code>符号的地址和程序的入口地址。</p>
-<p>可重定位目标文件符号表中的 <code>Value</code>都是相对地址，在可执行目标文件中都改成绝对地址了。此外还多了三个符号 <code>__bss_start</code>、<code>_edata</code>和 <code>_end</code>，这些是在链接过程中添进去的，加载器可以利用这些信息把 <code>.bss</code>段初始化为0。</p>
-<h4 id="345-反汇编结果">3.4.5 反汇编结果<a class="headerlink" href="#345-反汇编结果" title="Permanent link">&para;</a></h4>
-<p>再看一下用 <code>objdump</code>得到的可执行目标文件反汇编的结果：</p>
-<p><img alt="" src="../2023-01-19-15-30-35.png" /></p>
-<p>到此为止ELF文件的问题已介基本介绍（未对共享库目标文件进行讨论）。</p>
+  <h1>PAT A1076 Forwards on Weibo</h1>
+
+<p><strong>思路</strong>：本题为图结构的遍历题，题意中给出转发次数上限，即按层来遍历邻接结点，单步步长使用BFS即可解决。每次相邻的结点入队时，层数加一，即转发层数的限制。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="cpf">&lt;cstring&gt;</span>
+<span class="cp">#include</span><span class="cpf">&lt;queue&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">layer</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1005</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">visit</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">BFS</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idQuery</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Layer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">queue</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idQuery</span><span class="p">;</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="n">visit</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<span class="w">        </span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Node</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="n">id</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+<span class="w">            </span><span class="n">next</span><span class="p">.</span><span class="n">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">layer</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visit</span><span class="p">[</span><span class="n">next</span><span class="p">.</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">next</span><span class="p">.</span><span class="n">layer</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
+<span class="w">                </span><span class="n">visit</span><span class="p">[</span><span class="n">next</span><span class="p">.</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">res</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">L</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="n">user</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numFollow</span><span class="p">,</span><span class="w"> </span><span class="n">idFollow</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">user</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">numFollow</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numFollow</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">idFollow</span><span class="p">;</span>
+<span class="w">            </span><span class="n">G</span><span class="p">[</span><span class="n">idFollow</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">K</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idQuery</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">K</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">idQuery</span><span class="p">;</span>
+<span class="w">        </span><span class="n">memset</span><span class="p">(</span><span class="n">visit</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">N</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">numForward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BFS</span><span class="p">(</span><span class="n">idQuery</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">);</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numForward</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -3263,7 +2637,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2024</span>
   </span>
 
     
@@ -3273,7 +2647,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2024</span>
   </span>
 
     
@@ -3325,10 +2699,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   </body>
