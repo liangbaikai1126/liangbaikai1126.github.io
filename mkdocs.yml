@@ -42,12 +42,23 @@ nav:
     - index.md
 
   - 刷题:
+    - 动态规划:
+      - 最大连续子序列和:
+        - 刷题/动态规划/最大连续子序列和/PAT A1007_Maximum Subsequence Sum.md
+      - 最长不下降子序列（LIS）:
+        - 刷题/动态规划/最长不下降子序列（LIS）/PAT A1045_Favorite Color Stripe.md
     - 图:
       - 图的遍历:
         - 刷题/图/图的遍历/PAT A1013_Battle Over Cities.md
         - 刷题/图/图的遍历/PAT A1021_Deepest Root.md
         - 刷题/图/图的遍历/PAT A1034_Head of a Gang.md
         - 刷题/图/图的遍历/PAT A1076_Forwards on Weibo.md
+      - 最短路径:
+        - 刷题/图/最短路径/PAT A1003_Emergency.md
+        - 刷题/图/最短路径/PAT A1018_Public Bike Management.md
+        - 刷题/图/最短路径/PAT A1030_Travel Plan.md
+        - 刷题/图/最短路径/PAT A1072_Gas Station.md
+        - 刷题/图/最短路径/PAT A1087_All Roads Lead to Rome.md
     - 堆:
       - 刷题/堆/PAT A1098_Insertion or Heap Sort.md
     - 并查集:
