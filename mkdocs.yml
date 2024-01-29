@@ -45,8 +45,10 @@ nav:
     - 动态规划:
       - 最大连续子序列和:
         - 刷题/动态规划/最大连续子序列和/PAT A1007_Maximum Subsequence Sum.md
-      - 最长不下降子序列（LIS）:
-        - 刷题/动态规划/最长不下降子序列（LIS）/PAT A1045_Favorite Color Stripe.md
+      - 最长不下降子序列LIS:
+        - 刷题/动态规划/最长不下降子序列/PAT A1045_Favorite Color Stripe.md
+      - 最长公共子序列LCS:
+        - 刷题/动态规划/最长不下降子序列/PAT A1045_Favorite Color Stripe.md
     - 图:
       - 图的遍历:
         - 刷题/图/图的遍历/PAT A1013_Battle Over Cities.md
