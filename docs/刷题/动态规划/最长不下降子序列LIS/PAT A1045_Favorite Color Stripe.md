@@ -1,6 +1,8 @@
-**思路**：LIS做法：先将喜欢的长度为 M 的颜色序列映射到 0 ~ M-1，之后直接将不喜欢的颜色序列删去，重新整理得到映射后存留的颜色序列a。此时存留的序列一定都是喜欢的颜色。再按照LIS的模板，dp[i]代表a[i]结尾的最长序列，状态转移方程为dp[i] = max{dp[j], 1} + 1, 0 < j < i，且满足a[j] <= a[i]即不递减。
+**思路**：
 
-LCS做法：
+**LIS做法**：先将喜欢的长度为 M 的颜色序列映射到 0 ~ M-1，之后直接将不喜欢的颜色序列删去，重新整理得到映射后存留的颜色序列a。此时存留的序列一定都是喜欢的颜色。再按照LIS的模板，dp[i]代表a[i]结尾的最长序列，状态转移方程为dp[i] = max{dp[j], 1} + 1, 0 < j < i，且满足a[j] <= a[i]即不递减。
+
+**LCS做法**：
 ```cpp
 //LIS
 #include<cstdio>
@@ -41,5 +43,30 @@ int main() {
 }
 
 //LCS
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+const int MAXC = 210;
+const int MAXN = 10005;
 
+int A[MAXC], B[MAXN], dp[MAXC][MAXN];
+
+int main() {
+    int N, M;
+    scanf("%d%d", &N, &M);
+    for(int i = 1; i <= M; i++)
+        scanf("%d", &A[i]);
+    int L;
+    scanf("%d", &L);
+    for(int i = 1; i <= L; i++)
+        scanf("%d", &B[i]);
+    for(int i = 1; i <= M; i++) {
+        for(int j = 1; j <= L; j++) {
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+            if(A[i] == B[j]) dp[i][j] += 1;
+        }
+    }
+    printf("%d", dp[M][L]);
+    return 0;
+}
 ```
