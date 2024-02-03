@@ -48,7 +48,7 @@ nav:
       - 最长不下降子序列LIS:
         - 刷题/动态规划/最长不下降子序列LIS/PAT A1045_Favorite Color Stripe.md
       - 最长公共子序列LCS:
-        - 刷题/动态规划/最长不下降子序列LIS/PAT A1045_Favorite Color Stripe.md
+        - 刷题/动态规划/最长公共子序列LCS/PAT A1045_Favorite Color Stripe.md
     - 图:
       - 图的遍历:
         - 刷题/图/图的遍历/PAT A1013_Battle Over Cities.md
