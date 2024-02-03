@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://liangbaikai1126.github.io/%E5%88%B7%E9%A2%98/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1053_Path%20of%20Equal%20Weight/">
+        <link rel="canonical" href="https://liangbaikai1126.github.io/%E5%88%B7%E9%A2%98/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7DP/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97LCS/LeetCode%2072.%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/">
       
       
-        <link rel="prev" href="../PAT%20A1004_Counting%20Leaves/">
+        <link rel="prev" href="../PAT%20A1045_Favorite%20Color%20Stripe/">
       
       
-        <link rel="next" href="../../%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1043_Is%20it%20a%20Binary%20Search%20Tree/">
+        <link rel="next" href="../../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1013_Battle%20Over%20Cities/">
       
       
-      <link rel="icon" href="../../../../logo.ico">
+      <link rel="icon" href="../../../../../logo.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
     
     
       
-        <title>PAT A1053 Path of Equal Weight - 大开的笔记本</title>
+        <title>LeetCode 72.编辑距离 - 大开的笔记本</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.f2e4d321.min.css">
       
       
   
@@ -86,9 +86,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -116,9 +116,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="大开的笔记本" class="md-header__button md-logo" aria-label="大开的笔记本" data-md-component="logo">
+    <a href="../../../../.." title="大开的笔记本" class="md-header__button md-logo" aria-label="大开的笔记本" data-md-component="logo">
       
-  <img src="../../../../logo.ico" alt="logo">
+  <img src="../../../../../logo.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -135,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PAT A1053 Path of Equal Weight
+              LeetCode 72.编辑距离
             
           </span>
         </div>
@@ -218,7 +218,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../.." class="md-tabs__link">
+        <a href="../../../../.." class="md-tabs__link">
           
   
     
@@ -256,7 +256,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/LeetCode%20516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-tabs__link">
+        <a href="../../../%E5%8C%BA%E9%97%B4DP/LeetCode%20516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-tabs__link">
           
   
     
@@ -282,7 +282,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-tabs__link">
+        <a href="../../../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-tabs__link">
           
   
     
@@ -302,7 +302,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../%E8%AF%AD%E8%A8%80/" class="md-tabs__link">
+        <a href="../../../../../%E8%AF%AD%E8%A8%80/" class="md-tabs__link">
           
   
     
@@ -322,7 +322,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
+        <a href="../../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
           
   
     
@@ -357,9 +357,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="大开的笔记本" class="md-nav__button md-logo" aria-label="大开的笔记本" data-md-component="logo">
+    <a href="../../../../.." title="大开的笔记本" class="md-nav__button md-logo" aria-label="大开的笔记本" data-md-component="logo">
       
-  <img src="../../../../logo.ico" alt="logo">
+  <img src="../../../../../logo.ico" alt="logo">
 
     </a>
     大开的笔记本
@@ -409,7 +409,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../.." class="md-nav__link ">
+            <a href="../../../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -511,8 +511,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -524,12 +526,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -543,7 +545,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             动态规划
@@ -600,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/LeetCode%20516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+      <a href="../../../%E5%8C%BA%E9%97%B4DP/LeetCode%20516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -621,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/LeetCode%201039.%E5%A4%9A%E8%BE%B9%E5%BD%A2%E4%B8%89%E8%A7%92%E5%89%96%E5%88%86%E7%9A%84%E6%9C%80%E4%BD%8E%E5%BE%97%E5%88%86/" class="md-nav__link">
+      <a href="../../../%E5%8C%BA%E9%97%B4DP/LeetCode%201039.%E5%A4%9A%E8%BE%B9%E5%BD%A2%E4%B8%89%E8%A7%92%E5%89%96%E5%88%86%E7%9A%84%E6%9C%80%E4%BD%8E%E5%BE%97%E5%88%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,8 +649,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -662,12 +666,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
@@ -681,7 +685,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_2">
             <span class="md-nav__icon md-icon"></span>
             线性DP
@@ -736,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7DP/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C/PAT%20A1007_Maximum%20Subsequence%20Sum/" class="md-nav__link">
+      <a href="../../%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C/PAT%20A1007_Maximum%20Subsequence%20Sum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -806,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7DP/%E6%9C%80%E9%95%BF%E4%B8%8D%E4%B8%8B%E9%99%8D%E5%AD%90%E5%BA%8F%E5%88%97LIS/PAT%20A1045_Favorite%20Color%20Stripe/" class="md-nav__link">
+      <a href="../../%E6%9C%80%E9%95%BF%E4%B8%8D%E4%B8%8B%E9%99%8D%E5%AD%90%E5%BA%8F%E5%88%97LIS/PAT%20A1045_Favorite%20Color%20Stripe/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -832,8 +836,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -845,12 +851,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_2_3" id="__nav_2_1_2_3_label" tabindex="0">
@@ -864,7 +870,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_2_3">
             <span class="md-nav__icon md-icon"></span>
             最长公共子序列LCS
@@ -878,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7DP/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97LCS/PAT%20A1045_Favorite%20Color%20Stripe/" class="md-nav__link">
+      <a href="../PAT%20A1045_Favorite%20Color%20Stripe/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,10 +902,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7DP/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97LCS/LeetCode%2072.%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -908,6 +921,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1034,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1013_Battle%20Over%20Cities/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1013_Battle%20Over%20Cities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1055,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1021_Deepest%20Root/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1021_Deepest%20Root/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1076,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1034_Head%20of%20a%20Gang/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1034_Head%20of%20a%20Gang/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1097,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1076_Forwards%20on%20Weibo/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1076_Forwards%20on%20Weibo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1175,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1003_Emergency/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1003_Emergency/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1196,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1018_Public%20Bike%20Management/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1018_Public%20Bike%20Management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1217,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1030_Travel%20Plan/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1030_Travel%20Plan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1072_Gas%20Station/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1072_Gas%20Station/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1259,7 +1273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1087_All%20Roads%20Lead%20to%20Rome/" class="md-nav__link">
+      <a href="../../../../%E5%9B%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/PAT%20A1087_All%20Roads%20Lead%20to%20Rome/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1337,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%A0%86/PAT%20A1098_Insertion%20or%20Heap%20Sort/" class="md-nav__link">
+      <a href="../../../../%E5%A0%86/PAT%20A1098_Insertion%20or%20Heap%20Sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1407,7 +1421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%B9%B6%E6%9F%A5%E9%9B%86/PAT%20A1107_Social%20Clusters/" class="md-nav__link">
+      <a href="../../../../%E5%B9%B6%E6%9F%A5%E9%9B%86/PAT%20A1107_Social%20Clusters/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1479,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%80%92%E6%8E%A8/PAT%20A1093_CountPATs/" class="md-nav__link">
+      <a href="../../../../%E9%80%92%E6%8E%A8/PAT%20A1093_CountPATs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1500,7 +1514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%80%92%E6%8E%A8/PAT%20A1001_Quick%20Sort/" class="md-nav__link">
+      <a href="../../../../%E9%80%92%E6%8E%A8/PAT%20A1001_Quick%20Sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1572,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%B4%A8%E6%95%B0/PAT%20A1059_Prime%20Factors/" class="md-nav__link">
+      <a href="../../../../%E8%B4%A8%E6%95%B0/PAT%20A1059_Prime%20Factors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1593,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%B4%A8%E6%95%B0/PAT%20B1013_%E6%95%B0%E7%B4%A0%E6%95%B0/" class="md-nav__link">
+      <a href="../../../../%E8%B4%A8%E6%95%B0/PAT%20B1013_%E6%95%B0%E7%B4%A0%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1663,7 +1677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/PAT%20A1060_Are%20They%20Equal/" class="md-nav__link">
+      <a href="../../../../%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/PAT%20A1060_Are%20They%20Equal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1782,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/PAT%20A1074_Reversing%20Linked%20List/" class="md-nav__link">
+      <a href="../../../../%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/PAT%20A1074_Reversing%20Linked%20List/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1803,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/LeetCode%2025.K%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+      <a href="../../../../%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/LeetCode%2025.K%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1832,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%93%BE%E8%A1%A8/PAT%20A1032_Sharing/" class="md-nav__link">
+      <a href="../../../../%E9%93%BE%E8%A1%A8/PAT%20A1032_Sharing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1853,7 +1867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%93%BE%E8%A1%A8/PAT%20A1052_Linked%20List%20Sorting/" class="md-nav__link">
+      <a href="../../../../%E9%93%BE%E8%A1%A8/PAT%20A1052_Linked%20List%20Sorting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1874,7 +1888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%93%BE%E8%A1%A8/PAT%20A1097_Deduplication%20on%20a%20Linked%20List/" class="md-nav__link">
+      <a href="../../../../%E9%93%BE%E8%A1%A8/PAT%20A1097_Deduplication%20on%20a%20Linked%20List/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1900,10 +1914,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1919,12 +1931,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -1938,7 +1950,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             树
@@ -1997,7 +2009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1020_Tree%20Traversals/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1020_Tree%20Traversals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2018,7 +2030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1086_Tree%20Traversals%20Again/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1086_Tree%20Traversals%20Again/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2039,7 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1102_Invert%20a%20Binary%20Tree/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1102_Invert%20a%20Binary%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2065,10 +2077,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -2088,12 +2098,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9_2" >
         
           
           <label class="md-nav__link" for="__nav_2_9_2" id="__nav_2_9_2_label" tabindex="0">
@@ -2107,7 +2117,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_9_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_9_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_9_2">
             <span class="md-nav__icon md-icon"></span>
             树的遍历
@@ -2121,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PAT%20A1079_Total%20Sales%20of%20Supply%20Chain/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1079_Total%20Sales%20of%20Supply%20Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2142,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PAT%20A1090_Highest%20Price%20in%20Supply%20Chain/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1090_Highest%20Price%20in%20Supply%20Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2163,7 +2173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PAT%20A1094_The%20Largest%20Generation/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1094_The%20Largest%20Generation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2184,7 +2194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PAT%20A1106_Lowest%20Price%20in%20Supply%20Chain/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1106_Lowest%20Price%20in%20Supply%20Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2205,7 +2215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PAT%20A1004_Counting%20Leaves/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1004_Counting%20Leaves/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2223,17 +2233,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/PAT%20A1053_Path%20of%20Equal%20Weight/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2242,7 +2245,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2308,7 +2310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1043_Is%20it%20a%20Binary%20Search%20Tree/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1043_Is%20it%20a%20Binary%20Search%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2329,7 +2331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1064_Complete%20Binary%20Search%20Tree/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1064_Complete%20Binary%20Search%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2350,7 +2352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1099_Build%20a%20Binary%20Search%20Tree/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/PAT%20A1099_Build%20a%20Binary%20Search%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2420,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/PAT%20A1066_Root%20of%20AVL%20Tree/" class="md-nav__link">
+      <a href="../../../../%E6%A0%91/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/PAT%20A1066_Root%20of%20AVL%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2498,7 +2500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DFS/PAT%20A1103_Integer%20Factorization/" class="md-nav__link">
+      <a href="../../../../DFS/PAT%20A1103_Integer%20Factorization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2568,7 +2570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../BFS/PAT%20A1091_Acute%20Stroke/" class="md-nav__link">
+      <a href="../../../../BFS/PAT%20A1091_Acute%20Stroke/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2638,7 +2640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%A0%88/PAT%20A1051_Pop%20Sequence/" class="md-nav__link">
+      <a href="../../../../%E6%A0%88/PAT%20A1051_Pop%20Sequence/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2708,7 +2710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%98%9F%E5%88%97/PAT%20A1056_Mice%20and%20Rice/" class="md-nav__link">
+      <a href="../../../../%E9%98%9F%E5%88%97/PAT%20A1056_Mice%20and%20Rice/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2767,7 +2769,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-nav__link ">
+            <a href="../../../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2827,7 +2829,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../%E8%AF%AD%E8%A8%80/" class="md-nav__link ">
+            <a href="../../../../../%E8%AF%AD%E8%A8%80/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2944,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E8%AF%AD%E8%A8%80/C%2B%2B/IO%E7%B1%BB/string%E6%B5%81/1/" class="md-nav__link">
+      <a href="../../../../../%E8%AF%AD%E8%A8%80/C%2B%2B/IO%E7%B1%BB/string%E6%B5%81/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2965,7 +2967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E8%AF%AD%E8%A8%80/C%2B%2B/IO%E7%B1%BB/%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/1/" class="md-nav__link">
+      <a href="../../../../../%E8%AF%AD%E8%A8%80/C%2B%2B/IO%E7%B1%BB/%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3038,7 +3040,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/" class="md-nav__link ">
+            <a href="../../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3071,7 +3073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/ELF%E6%96%87%E4%BB%B6/1/" class="md-nav__link">
+      <a href="../../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/ELF%E6%96%87%E4%BB%B6/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3092,7 +3094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/Raft%E7%AE%97%E6%B3%95/1/" class="md-nav__link">
+      <a href="../../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/Raft%E7%AE%97%E6%B3%95/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3113,7 +3115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/Win11%E5%AE%B6%E5%BA%AD%E7%89%88%E9%85%8D%E7%BD%AEWSL2/1/" class="md-nav__link">
+      <a href="../../../../../%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/Win11%E5%AE%B6%E5%BA%AD%E7%89%88%E9%85%8D%E7%BD%AEWSL2/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3168,80 +3170,38 @@
   
 
 
-  <h1>PAT A1053 Path of Equal Weight</h1>
+  <h1>LeetCode 72.编辑距离</h1>
 
-<p><strong>思路</strong>：利用深度优先搜索对路径进行搜索，注意判断是否到达叶结点以及剪枝。注意，题目中最后一个测试点可能出现子结点值乱序。即算法笔记中的参考答案进行的排序排序只能保证每个结点的直接子结点保持有序，但是无法保证键值相同的子结点的子结点，即孙结点有序。
-比如输出序列 10 9 8 7 和 10 9 7 8，故需要把所有的答案序列进行再次排序，注意<functional>头文件包含了greater函数模板。
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span>
-<span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span>
-<span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span>
-<span class="cp">#include</span><span class="cpf">&lt;functional&gt;</span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<p><strong>思路</strong>：一共有三种操作，插入，删除和替换。状态转移方程为，若 s[i] = t[j]，dp[i][j] = dp[i - 1][j - 1]。d
+若 s[i] != t[j]，dp[i][j] = min{dp[i][j - 1]（插入）, dp[i - 1][j]（删除）, dp[i - 1][j - 1]（替换）} + 1。</p>
+<p><strong>空间优化</strong>：本题依赖的状态转移可用滚动数组进行优化成两个一维数组，两个一维数组的状态转移仅依赖于左，上，左上，三个方向，其中左上会被左覆盖。
+因此可以设置临时变量来保存左上的状态，优化成一维数组。
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span><span class="n">dsdsdsdsd</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">105</span><span class="p">;</span>
-
-<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
-<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">children</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">minDistance</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">word1</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">word2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">word1</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">word2</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">        </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">dp</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">word1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">word2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
-
-<span class="n">Node</span><span class="w"> </span><span class="n">node</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
-
-<span class="kt">bool</span><span class="w"> </span><span class="nf">cmp</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">node</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">data</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">node</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">data</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="n">path</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">children</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<span class="w">        </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">data</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
-<span class="w">        </span><span class="k">return</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">node</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">children</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-<span class="w">        </span><span class="n">path</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child</span><span class="p">;</span>
-<span class="w">        </span><span class="n">DFS</span><span class="p">(</span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">node</span><span class="p">[</span><span class="n">child</span><span class="p">].</span><span class="n">data</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">target</span><span class="p">);</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">data</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">child</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">child</span><span class="p">);</span>
-<span class="w">            </span><span class="n">node</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">children</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">child</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">sort</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">children</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">node</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">children</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">cmp</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="n">DFS</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">data</span><span class="p">);</span>
-<span class="w">    </span><span class="n">sort</span><span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">ans</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">greater</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="p">());</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">res</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ans</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<span class="w">                </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
-<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
 </code></pre></div></p>
 
 
@@ -3265,7 +3225,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2024</span>
   </span>
 
     
@@ -3275,7 +3235,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2024</span>
   </span>
 
     
@@ -3327,10 +3287,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.caa56a14.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.caa56a14.min.js"></script>
       
     
   </body>
