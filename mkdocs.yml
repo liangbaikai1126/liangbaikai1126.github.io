@@ -43,12 +43,17 @@ nav:
 
   - 刷题:
     - 动态规划:
-      - 最大连续子序列和:
-        - 刷题/动态规划/最大连续子序列和/PAT A1007_Maximum Subsequence Sum.md
-      - 最长不下降子序列LIS:
-        - 刷题/动态规划/最长不下降子序列LIS/PAT A1045_Favorite Color Stripe.md
-      - 最长公共子序列LCS:
-        - 刷题/动态规划/最长公共子序列LCS/PAT A1045_Favorite Color Stripe.md
+      - 区间DP:
+          - 刷题/动态规划/区间DP/LeetCode 516.最长回文子序列.md
+          - 刷题/动态规划/区间DP/LeetCode 1039.多边形三角剖分的最低得分.md
+      - 线性DP:
+        - 最大连续子序列和:
+          - 刷题/动态规划/线性DP/最大连续子序列和/PAT A1007_Maximum Subsequence Sum.md
+        - 最长不下降子序列LIS:
+          - 刷题/动态规划/线性DP/最长不下降子序列LIS/PAT A1045_Favorite Color Stripe.md
+        - 最长公共子序列LCS:
+          - 刷题/动态规划/线性DP/最长公共子序列LCS/PAT A1045_Favorite Color Stripe.md
+          - 刷题/动态规划/线性DP/最长公共子序列LCS/LeetCode 72.编辑距离.md
     - 图:
       - 图的遍历:
         - 刷题/图/图的遍历/PAT A1013_Battle Over Cities.md
