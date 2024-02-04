@@ -5,7 +5,7 @@
 因此可以设置临时变量来保存左上的状态，优化成一维数组。
 ```cpp
 class Solution {
-public:dsdsdsdsd
+public:
     int min(int a, int b, int c) {
         if(a < b) return a > c ? c : a;
         return b > c ? c : b;
@@ -28,6 +28,38 @@ public:dsdsdsdsd
             }
         }
         return dp[m][n];
+    }
+};
+
+//空间优化
+class Solution {
+public:
+    int min(int a, int b, int c) {
+        if(a < b) return a > c ? c : a;
+        return b > c ? c : b;
+    }
+
+    int minDistance(string word1, string word2) {
+        int m = word1.size(), n = word2.size();
+        vector<int> dp(n + 1, 0);
+        for(int j = 0; j < n; j++) {
+            dp[j + 1] = j + 1;
+        }
+        int pre, temp;
+        for(int i = 0; i < m; i++) {
+            pre = dp[0];
+            dp[0] += 1;
+            for(int j = 0; j < n; j++) {
+                temp = dp[j + 1];
+                if(word1[i] == word2[j]) {
+                    dp[j + 1] = pre;
+                } else {
+                    dp[j + 1] = min(dp[j], temp, pre) + 1;
+                }
+                pre = temp;
+            }
+        }
+        return dp[n];
     }
 };
 ```
