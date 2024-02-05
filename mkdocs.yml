@@ -127,9 +127,7 @@ nav:
         - 语言/C++/IO类/格式控制/1.md
 
   - 零散知识:
-    - 写在前面: 零散知识/index.md
-    - ELF文件: 零散知识/ELF文件/1.md
-    - Raft算法: 零散知识/Raft算法/1.md
+    - 写在前面: 其他/index.md
     - WSL安装教程: 零散知识/Win11家庭版配置WSL2/1.md
 
 markdown_extensions:
