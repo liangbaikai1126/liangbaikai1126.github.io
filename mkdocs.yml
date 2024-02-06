@@ -128,7 +128,7 @@ nav:
 
   - 零散知识:
     - 写在前面: 其他/index.md
-    - WSL安装教程: 零散知识/Win11家庭版配置WSL2/1.md
+    - WSL安装教程: 其他/Win11家庭版配置WSL2/1.md
 
 markdown_extensions:
   - toc:
