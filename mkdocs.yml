@@ -81,7 +81,9 @@ nav:
       - 刷题/质数/PAT A1059_Prime Factors.md
       - 刷题/质数/PAT B1013_数素数.md
     - 字符串处理:
+      - 刷题/字符串处理/PAT A1001_A+B Format.md
       - 刷题/字符串处理/PAT A1060_Are They Equal.md
+      - 刷题/字符串处理/PAT A1002_A+B for Polynomials.md
     - 链表:
       - 反转链表:
         - 刷题/链表/反转链表/PAT A1074_Reversing Linked List.md
@@ -126,9 +128,9 @@ nav:
         - 语言/C++/IO类/string流/1.md
         - 语言/C++/IO类/格式控制/1.md
 
-  - 零散知识:
-    - 写在前面: 其他/index.md
-    - WSL安装教程: 其他/Win11家庭版配置WSL2/1.md
+  - 杂项:
+    - 写在前面: 杂项/index.md
+    - WSL安装教程: 杂项/Win11家庭版配置WSL2/1.md
 
 markdown_extensions:
   - toc:
