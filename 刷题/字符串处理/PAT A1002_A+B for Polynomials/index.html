@@ -14,7 +14,7 @@
         <link rel="prev" href="../PAT%20A1060_Are%20They%20Equal/">
       
       
-        <link rel="next" href="../../%E9%93%BE%E8%A1%A8/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/PAT%20A1074_Reversing%20Linked%20List/">
+        <link rel="next" href="../PAT%20A1005_Spell%20It%20Right/">
       
       
       <link rel="icon" href="../../../logo.ico">
@@ -282,7 +282,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../人工智能/index.md" class="md-tabs__link">
+        <a href="../../../%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
           
   
     
@@ -447,6 +447,8 @@
   
     
     
+      
+        
       
         
       
@@ -1750,6 +1752,8 @@
       
         
       
+        
+      
     
     
     
@@ -1846,6 +1850,27 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAT%20A1005_Spell%20It%20Right/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PAT A1005 Spell It Right
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2892,6 +2917,99 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    模拟
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            模拟
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A8%A1%E6%8B%9F/PAT%20A1006_Sign%20In%20and%20Sign%20Out/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PAT A1006 Sign In and Sign Out
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A8%A1%E6%8B%9F/PAT%20A1008_Elevator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PAT A1008 Elevator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2909,6 +3027,8 @@
     
       
         
+          
+        
       
     
     
@@ -2925,16 +3045,19 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     深度学习
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -2943,25 +3066,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../人工智能/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    None
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
           </ul>
@@ -3300,6 +3404,7 @@
 
   <h1>PAT A1002 A+B for Polynomials</h1>
 
+<p><strong>思路</strong>：整体思路类似于归并排序，将输入数据封装成结构后按指数大小排序，采用队列的做法。注意系数相加后若为 0，该项不存在，不能加入答案。
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span>
 <span class="cp">#include</span><span class="cpf">&lt;queue&gt;</span>
@@ -3365,7 +3470,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></p>
 
 
 
@@ -3388,7 +3493,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2024</span>
   </span>
 
     
