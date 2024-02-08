@@ -84,6 +84,7 @@ nav:
       - 刷题/字符串处理/PAT A1001_A+B Format.md
       - 刷题/字符串处理/PAT A1060_Are They Equal.md
       - 刷题/字符串处理/PAT A1002_A+B for Polynomials.md
+      - 刷题/字符串处理/PAT A1005_Spell It Right.md
     - 链表:
       - 反转链表:
         - 刷题/链表/反转链表/PAT A1074_Reversing Linked List.md
@@ -117,9 +118,12 @@ nav:
       - 刷题/栈/PAT A1051_Pop Sequence.md
     - 队列:
       - 刷题/队列/PAT A1056_Mice and Rice.md
+    - 模拟:
+      - 刷题/模拟/PAT A1006_Sign In and Sign Out.md
+      - 刷题/模拟/PAT A1008_Elevator.md
   
   - 深度学习:
-    - 人工智能/index.md
+    - 深度学习/index.md
   
   - 语言:
     - 语言/index.md
