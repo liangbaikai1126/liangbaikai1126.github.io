@@ -231,6 +231,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://liangbaikai1126.github.io/%E5%88%B7%E9%A2%98/%E6%A8%A1%E6%8B%9F/PAT%20A1019_General%20Palindromic%20Number/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://liangbaikai1126.github.io/%E5%88%B7%E9%A2%98/%E6%A8%A1%E6%8B%9F/PAT%20A1027_Colors%20in%20Mars/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://liangbaikai1126.github.io/%E5%88%B7%E9%A2%98/%E6%A8%A1%E6%8B%9F/PAT%20A1031_Hello%20World%20for%20U/</loc>
          <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
@@ -247,6 +257,11 @@
     </url>
     <url>
          <loc>https://liangbaikai1126.github.io/%E5%88%B7%E9%A2%98/%E6%A8%A1%E6%8B%9F/PAT%20A1046_1046%20Shortest%20Distance/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://liangbaikai1126.github.io/%E5%88%B7%E9%A2%98/%E6%A8%A1%E6%8B%9F/PAT%20A1058_A%2BB%20in%20Hogwarts/</loc>
          <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
