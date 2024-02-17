@@ -133,8 +133,11 @@ nav:
       - 刷题/模拟/PAT A1058_A+B in Hogwarts.md
       - 刷题/模拟/PAT A1073_Scientific Notation.md
       - 刷题/模拟/PAT A1035_Password.md
+      - 刷题/模拟/PAT A1077_Kuchiguse.md
+      - 刷题/模拟/PAT A1082_Read Number in Chinese.md
     - 二分查找:
       - 刷题/二分查找/PAT A1010_Radix.md
+    - 排序:
   
   - 深度学习:
     - 深度学习/index.md
