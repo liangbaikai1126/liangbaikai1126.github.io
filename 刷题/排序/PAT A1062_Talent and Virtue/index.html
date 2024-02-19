@@ -14,11 +14,11 @@
         <link rel="prev" href="../../%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/PAT%20A1010_Radix/">
       
       
-        <link rel="next" href="../../../%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+        <link rel="next" href="../PAT%20A1012_The%20Best%20Rank/">
       
       
       <link rel="icon" href="../../../logo.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
       
   
@@ -3436,6 +3436,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -3491,6 +3495,48 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAT%20A1012_The%20Best%20Rank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PAT A1012 The Best Rank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAT%20A1016_Phone%20Bills/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PAT A1016 Phone Bills
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3894,7 +3940,58 @@
 
   <h1>PAT A1062 Talent and Virtue</h1>
 
+<p><strong>思路</strong>：输入可分为 1. 德才 &gt;= H  2. 德 &gt;= H，才 &lt; H  3. 德 &gt;= 才  4. 德才 &gt;= L  5. 德或才 &lt; L 共 5 档</p>
+<p>此外，先按档次，其次总分，再按德分，最后按 id，以此为依据进行排序。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAXN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100005</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vg</span><span class="p">,</span><span class="w"> </span><span class="n">tg</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">flag</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Student</span><span class="p">;</span>
+
+<span class="n">Student</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="p">;</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">cmp</span><span class="p">(</span><span class="n">Student</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">flag</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">flag</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">flag</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">sum</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">sum</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">vg</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">vg</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">vg</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">vg</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">H</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vg</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">tg</span><span class="p">;</span>
+<span class="w">        </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">tg</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vg</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">tg</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">            </span><span class="n">M</span><span class="o">--</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vg</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">tg</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vg</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">tg</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vg</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">tg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">sort</span><span class="p">(</span><span class="n">stu</span><span class="p">,</span><span class="w"> </span><span class="n">stu</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">cmp</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">M</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vg</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">stu</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">tg</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -3917,7 +4014,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2024</span>
   </span>
 
     
