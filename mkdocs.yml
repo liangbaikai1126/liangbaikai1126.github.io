@@ -139,6 +139,8 @@ nav:
       - 刷题/二分查找/PAT A1010_Radix.md
     - 排序:
       - 刷题/排序/PAT A1062_Talent and Virtue.md
+      - 刷题/排序/PAT A1012_The Best Rank.md
+      - 刷题/排序/PAT A1016_Phone Bills.md
   - 深度学习:
     - 深度学习/index.md
   
