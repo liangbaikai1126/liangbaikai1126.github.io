@@ -135,12 +135,16 @@ nav:
       - 刷题/模拟/PAT A1035_Password.md
       - 刷题/模拟/PAT A1077_Kuchiguse.md
       - 刷题/模拟/PAT A1082_Read Number in Chinese.md
+      - 刷题/模拟/PAT A1061_Dating.md
     - 二分查找:
       - 刷题/二分查找/PAT A1010_Radix.md
     - 排序:
       - 刷题/排序/PAT A1062_Talent and Virtue.md
       - 刷题/排序/PAT A1012_The Best Rank.md
       - 刷题/排序/PAT A1016_Phone Bills.md
+      - 刷题/排序/PAT A1025_PAT Ranking.md
+      - 刷题/排序/PAT A1028_List Sorting.md
+      - 刷题/排序/PAT A1055_The World's Richest.md
   - 深度学习:
     - 深度学习/index.md
   
