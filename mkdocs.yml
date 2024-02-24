@@ -149,6 +149,14 @@ nav:
       - 刷题/排序/PAT A1083_List Grades.md
       - 刷题/排序/PAT A1080_Graduate Admission.md
       - 刷题/排序/PAT A1095_Cars on Campus.md
+    - 散列:
+      - 刷题/散列/PAT A1084_Broken Keyboard.md
+      - 刷题/散列/PAT A1092_To Buy or Not to Buy.md
+      - 刷题/散列/PAT A1041_Be Unique.md
+      - 刷题/散列/PAT A1050_String Subtraction.md
+      - 刷题/散列/PAT A1048_Find Coins.md
+    - 贪心:
+      - 刷题/贪心/PAT A1070_Mooncake.md
   - 深度学习:
     - 深度学习/index.md
   
