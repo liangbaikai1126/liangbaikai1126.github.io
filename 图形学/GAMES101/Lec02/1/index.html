@@ -4557,9 +4557,9 @@
 
 <h1 id="lecture-02-review-of-linear-algebra">Lecture 02 Review of Linear Algebra<a class="headerlink" href="#lecture-02-review-of-linear-algebra" title="Permanent link">&para;</a></h1>
 <h2 id="dot-product">Dot Product<a class="headerlink" href="#dot-product" title="Permanent link">&para;</a></h2>
-<p>在图形学中通常将 $ n \times 1$ 的矩阵称为向量</p>
+<p>在图形学中通常将 <span class="arithmatex">\(n \times 1\)</span> 的矩阵称为向量</p>
 <p>向量的点乘可以判断方向性，＞0为方向基本一致，＜0为方向基本相反，=0为垂直</p>
-<p><img alt="image-20240719153041082" src="D:\GitHubPages\liangbaikai1126.github.io\docs\图形学\GAMES101\Lec02\image-20240719153041082.png" /></p>
+<p><img alt="" src="../image/1.png" /></p>
 <h2 id="cross-product">Cross Product<a class="headerlink" href="#cross-product" title="Permanent link">&para;</a></h2>
 <p>分别使用  <span class="arithmatex">\(\overrightarrow{x}\)</span>，<span class="arithmatex">\(\overrightarrow{y}\)</span>，<span class="arithmatex">\(\overrightarrow{z}\)</span>  来代表三维坐标向量，有以下的叉乘关系，可以通俗的记忆为轮换关系</p>
 <div class="arithmatex">\[
@@ -4571,18 +4571,18 @@
 \overrightarrow{x} \times \overrightarrow{z} = -\overrightarrow{y} \\
 \]</div>
 <p>向量叉乘计算可使用公式，得到的结果向量方向符合右手定则，即逆时针方向</p>
-<p>所得结果为正向，代表 $ \overrightarrow{b}$  在  $ \overrightarrow{a}$   的左侧</p>
-<p>所得结果为负向，代表 $ \overrightarrow{b}$  在  $ \overrightarrow{a}$   的右侧
-$$
+<p>所得结果为正向，代表 <span class="arithmatex">\(\overrightarrow{b}\)</span>  在  <span class="arithmatex">\(\overrightarrow{a}\)</span>   的左侧</p>
+<p>所得结果为负向，代表 <span class="arithmatex">\(\overrightarrow{b}\)</span>  在  <span class="arithmatex">\(\overrightarrow{a}\)</span>   的右侧</p>
+<div class="arithmatex">\[
 \overrightarrow{a} \times \overrightarrow{b} = 
 \left(\begin{matrix}
-y_a z_b - y_b z_a \
-z_a x_b - x_a z_b \
-x_a y_b - y_a x_b \
+y_a z_b - y_b z_a \\
+z_a x_b - x_a z_b \\
+x_a y_b - y_a x_b \\
 \end{matrix}\right)
-$$
-通过叉乘可以判断点是否在多边形的内部，即由P点连接成的向量均在边向量的同一侧（下图示例中为左侧）</p>
-<p><img alt="image-20240719161228103" src="D:\GitHubPages\liangbaikai1126.github.io\docs\图形学\GAMES101\Lec02\image-20240719161228103.png" /></p>
+\]</div>
+<p>通过叉乘可以判断点是否在多边形的内部，即由P点连接成的向量均在边向量的同一侧（下图示例中为左侧）</p>
+<p><img alt="" src="../image/2.png" /></p>
 <h2 id="vector-multiplication-in-matrix-form">Vector Multiplication in Matrix form<a class="headerlink" href="#vector-multiplication-in-matrix-form" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Dot product</li>
@@ -4601,20 +4601,20 @@ x_a x_b + y_a y_b + z_a z_b
 \end{matrix}\right)
 $$</p>
 <ul>
-<li>Cross product 
-  $$
-  \overrightarrow{a} \times \overrightarrow{b} = A^*b =</li>
+<li>Cross product</li>
 </ul>
+<p>$$
+\overrightarrow{a} \times \overrightarrow{b} = A^*b =</p>
 <p>\left(\begin{matrix}
-  0 &amp; -z_a &amp; y_a \
-  z_a &amp; 0 &amp; -x_a \ 
-  -y_a &amp; x_a &amp; 0
-  \end{matrix}\right) </p>
+0 &amp; -z_a &amp; y_a \
+z_a &amp; 0 &amp; -x_a \ 
+-y_a &amp; x_a &amp; 0
+\end{matrix}\right) </p>
 <p>\left(\begin{matrix}
-  x_b \ y_b \ z_b
-  \end{matrix}\right)
-  $$
-  注意上述公式中 A* 代表 duel matrix of vector a</p>
+x_b \ y_b \ z_b
+\end{matrix}\right)
+$$</p>
+<p>注意上述公式中 A* 代表 duel matrix of vector a</p>
 
 
 
