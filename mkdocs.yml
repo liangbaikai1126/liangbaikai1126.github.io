@@ -175,30 +175,36 @@ nav:
 
 markdown_extensions:
   - toc:
-      permalink: true # link for each title
+      permalink: true                                # link for each title
       slugify: !!python/name:pymdownx.slugs.uslugify # enable Unicode link
-  - admonition                                   # 注解块支持
-  - pymdownx.arithmatex                          # 数学公式的TeX语法支持
+  - admonition                                       # 注解块支持
+  - pymdownx.arithmatex:                             # 数学公式的TeX语法支持
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
-  - pymdownx.emoji:                              # 表情支持
+  - pymdownx.emoji:                                  # 表情支持
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tasklist:                           # 任务清单支持
+  - pymdownx.tasklist:                               # 任务清单支持
       custom_checkbox: true
   - pymdownx.tilde
-  - meta                                         # 元数据支持
+  - meta                                             # 元数据支持                
 
-site_name: 大开的笔记本
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+
+site_name: 开的博客
 site_url: https://liangbaikai1126.github.io/
-repo_name: liangbaikai1126/大开的笔记本
+repo_name: liangbaikai1126/开的博客
 repo_url: https://github.com/liangbaikai1126/liangbaikai1126.github.io
 extra_css:
   - stylesheets/extra.css
