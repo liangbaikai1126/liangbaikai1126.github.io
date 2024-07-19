@@ -161,6 +161,7 @@ nav:
   - 图形学:
     - GAMES101:
       - 图形学/GAMES101/Lec02/1.md
+      - 图形学/GAMES101/Lec03/1.md
   
   - 语言:
     - 语言/index.md
@@ -198,13 +199,16 @@ markdown_extensions:
   - meta                                             # 元数据支持                
 
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - stylesheets/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
 
 
 site_name: 开的博客
 site_url: https://liangbaikai1126.github.io/
 repo_name: liangbaikai1126/开的博客
 repo_url: https://github.com/liangbaikai1126/liangbaikai1126.github.io
-extra_css:
-  - stylesheets/extra.css
