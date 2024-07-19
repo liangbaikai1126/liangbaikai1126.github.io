@@ -158,8 +158,9 @@ nav:
     - 贪心:
       - 刷题/贪心/PAT A1070_Mooncake.md
       - 刷题/贪心/PAT A1033_To Fill or Not to Fill.md
-  - 深度学习:
-    - 深度学习/index.md
+  - 图形学:
+    - GAMES101:
+      - 图形学/GAMES101/Lec02/1.md
   
   - 语言:
     - 语言/index.md
