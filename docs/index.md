@@ -3,7 +3,7 @@
 业精于勤，荒于嬉；行成于思，毁于随。
 
 
-!!! note "告诉自己"
+!!! note "名 人 名 言"
     <div align="center" style="font-size:30px;font-weight:bold">
         我要一步一步往上爬
         <br/>

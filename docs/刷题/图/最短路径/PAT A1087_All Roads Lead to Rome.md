@@ -1,4 +1,8 @@
-**思路**：可采用Dijkstra或Dijkstra + DFS的做法。使用Dijkstra时注意优先处理最短路径，其次是幸福值，最后是平均幸福值。打印路径时可以通过一维pre数组递归得到。
+**思路**：可采用Dijkstra或Dijkstra + DFS的做法。
+
+使用Dijkstra时注意优先处理最短路径，其次是幸福值，最后是平均幸福值。
+
+打印路径时可以通过一维pre数组递归得到。
 
 ```cpp
 #include<iostream>

@@ -1,4 +1,8 @@
-**思路**：先使用Dijkstra算法求出最短路径，使用pre记录最短路径中每个结点的前驱。再使用DFS从目标结点开始倒序遍历到PBMC，求出具有最小Need同时具有最小remain的路径。注意，倒序遍历到PBMC之后才开始计算need和remain，而且当出现remain不足当前站点所需自行车数量时，一定需要从PBMC带来自行车，也就是need单调增加，不能从后面的结点中得到的remain再补贴前面的结点。
+**思路**：先使用Dijkstra算法求出最短路径，使用pre记录最短路径中每个结点的前驱。
+
+再使用DFS从目标结点开始倒序遍历到PBMC，求出具有最小Need同时具有最小remain的路径。
+
+注意，倒序遍历到PBMC之后才开始计算need和remain，而且当出现remain不足当前站点所需自行车数量时，一定需要从PBMC带来自行车，也就是need单调增加，不能从后面的结点中得到的remain再补贴前面的结点。
 
 ```cpp
 #include<iostream>

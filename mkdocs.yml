@@ -4,8 +4,25 @@ theme:
   logo: logo.ico
   favicon: logo.ico
   font:
-    text: 'SF'
-    code: 'SF Mono'
+    text: 'Bitter'
+    code: 'Roboto Mono'
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default # 日间模式
+      primary: blue # 上方的
+      accent: blue # 链接等可交互元件的高亮色
+      # teal
+      toggle:
+        icon: material/brightness-4 # 图标
+        name: 切换至夜间模式 # 鼠标悬浮提示
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate # 夜间模式
+      primary: black
+      accent: indigo
+      # teal
+      toggle:
+        icon: material/brightness-7
+        name: 切换至日间模式
   icon:
     admonition:
       note: octicons/tag-16
@@ -36,6 +53,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - search
+  - rss
 
 nav:
   - 主页: 
@@ -160,8 +178,11 @@ nav:
       - 刷题/贪心/PAT A1033_To Fill or Not to Fill.md
   - 图形学:
     - GAMES101:
+      - 图形学/GAMES101/index.md
       - 图形学/GAMES101/Lec02/1.md
       - 图形学/GAMES101/Lec03/1.md
+    - GAMES102:
+      - 图形学/GAMES102/index.md
   
   - 语言:
     - 语言/index.md
@@ -188,6 +209,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.emoji:                                  # 表情支持
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -196,16 +218,20 @@ markdown_extensions:
   - pymdownx.tasklist:                               # 任务清单支持
       custom_checkbox: true
   - pymdownx.tilde
-  - meta                                             # 元数据支持                
+  - meta                                             # 元数据支持
+  - attr_list # 按钮 / 图片
+  - pymdownx.snippets # 术语 / 代码块         
 
 extra_javascript:
   - javascripts/katex.js
+  - javascripts/extra.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 extra_css:
   - stylesheets/extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
 
 
 site_name: 开的博客
