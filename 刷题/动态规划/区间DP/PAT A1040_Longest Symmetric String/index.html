@@ -17,6 +17,9 @@
         <link rel="next" href="../../%E7%BA%BF%E6%80%A7DP/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C/PAT%20A1007_Maximum%20Subsequence%20Sum/">
       
       
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../../feed_rss_updated.xml">
+      
       <link rel="icon" href="../../../../logo.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
@@ -27,6 +30,9 @@
     
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.76a95c52.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -81,14 +87,16 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF:300,300i,400,400i,700,700i%7CSF+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"SF";--md-code-font:"SF Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Bitter";--md-code-font:"Roboto Mono"}</style>
       
     
     
       <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -100,7 +108,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -143,6 +158,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -290,7 +331,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/GAMES101/Lec02/1/" class="md-tabs__link">
+        <a href="../../../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/GAMES101/" class="md-tabs__link">
           
   
     
@@ -4026,6 +4067,8 @@
       
         
       
+        
+      
     
     
       
@@ -4067,6 +4110,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -4083,16 +4130,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/GAMES101/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     GAMES101
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
@@ -4100,6 +4155,8 @@
             GAMES101
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -4141,6 +4198,63 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/GAMES102/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GAMES102
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            GAMES102
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
             
           </ul>
@@ -4631,6 +4745,8 @@
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
         <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="../../../../javascripts/extra.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
