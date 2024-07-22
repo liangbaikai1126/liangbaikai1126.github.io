@@ -54,7 +54,6 @@ plugins:
       enable_creation_date: true
   - search
   - rss
-  - statistics
 
 nav:
   - 主页: 

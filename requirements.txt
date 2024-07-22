@@ -2,7 +2,6 @@ mkdocs-material
 mkdocs-git-revision-date-localized-plugin
 jieba
 rich
-mkdocs-statistics-plugin
 mkdocs-git-revision-date-plugin                                     
 mkdocs-material-extensions                
 mkdocs-rss-plugin
