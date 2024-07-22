@@ -4601,9 +4601,6 @@
 
   <h1>LeetCode 72.编辑距离</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 153 个字 :fontawesome-solid-code: 58 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：一共有三种操作，插入，删除和替换。状态转移方程为，若 s[i] = t[j]，dp[i][j] = dp[i - 1][j - 1]。d
 若 s[i] != t[j]，dp[i][j] = min{dp[i][j - 1]（插入）, dp[i - 1][j]（删除）, dp[i - 1][j - 1]（替换）} + 1。</p>
 <p><strong>空间优化</strong>：本题依赖的状态转移可用滚动数组进行优化成两个一维数组，两个一维数组的状态转移仅依赖于左，上，左上，三个方向，其中左上会被左覆盖。

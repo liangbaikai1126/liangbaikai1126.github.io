@@ -4597,9 +4597,6 @@
 
   <h1>PAT A1056 Mice and Rice</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 149 个字 :fontawesome-solid-code: 50 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：每轮可分成a组，其中最后一组可能不会人满。将所有人的初始序列输入队列中，每次比赛一共选出a个下一轮选手，即被淘汰的选手处于a + 1名。</p>
 <p>下一轮就有a人参赛，根据每组的最大人数可将下一轮的a人继续分组如此循环直到队列中只剩下1人即为排名第一的选手。</p>
 <p>注意，每个小组的比赛中都提前给参赛选手设下排名为a + 1，不影响后续排名更新。

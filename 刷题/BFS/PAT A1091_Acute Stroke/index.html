@@ -4597,9 +4597,6 @@
 
   <h1>PAT A1091 Acute Stroke</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 108 个字 :fontawesome-solid-code: 71 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：本题为三维BFS，本质上和二维BFS相同，不过从上下左右4种方向拓展为上下左右前后6种方向。</p>
 <p>一个连通空间即为一个核，达到阈值T的核可以算进总体积中。</p>
 <p>注意BFS中每次调用BFS相当于走过了一个连通区域，需要设置visit数组防止重复访问已经访问的坐标。</p>

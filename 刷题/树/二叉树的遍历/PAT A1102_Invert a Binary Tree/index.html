@@ -4599,9 +4599,6 @@
 
   <h1>PAT A1102 Invert a Binary Tree</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 55 个字 :fontawesome-solid-code: 74 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：设置标志数组notRoot，将作为左右子结点都排除为根节点，可找到根节点。接着根据后序遍历的顺序来Invert整颗树，利用BFS进行层序遍历。
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span>
 <span class="cp">#include</span><span class="cpf">&lt;queue&gt;</span>

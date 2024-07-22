@@ -4599,9 +4599,6 @@
 
   <h1>PAT A1030 Travel Plan</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 53 个字 :fontawesome-solid-code: 75 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：根据Dijkstra算法求出最短路径，用pre保存路径上每个结点的前驱。再使用DFS从终点进行倒序遍历，记录下最小的cost即为答案路径。
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span>

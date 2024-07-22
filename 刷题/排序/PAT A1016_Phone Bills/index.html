@@ -4597,9 +4597,6 @@
 
   <h1>PAT A1016 Phone Bills</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 109 个字 :fontawesome-solid-code: 102 行代码 :material-clock-time-two-outline: 预计阅读时间 2 分钟
-</div>
 <p><strong>思路</strong>：将输入的信息封装成结构，根据时间顺序进行排序。针对每个用户先寻找是否存在 on 在前，off 在后的情况，存在则一定需要输出。
 找到之后寻找所有有效记录，并以分钟为单位进行 money 和 time 的计算，注意题目给出的是美分/每分钟，最后计算是用美元做单位，进制为 100。</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>

@@ -4599,9 +4599,6 @@
 
   <h1>PAT A1034 Head of a Gang</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 135 个字 :fontawesome-solid-code: 62 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：通过邻接矩阵构建帮派图，通过DFS确定不同的连通分量来确定帮派个数以及人数。</p>
 <p>注意给出的图结构为无向图，为结点添加完权重之后，由最大权重确定帮派牢大。</p>
 <p>整个帮派的阈值由边权确定，即每条边只使用一次，使用后将边权置0，防止重复使用边。</p>

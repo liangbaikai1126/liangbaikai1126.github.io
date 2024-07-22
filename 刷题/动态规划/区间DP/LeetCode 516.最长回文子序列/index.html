@@ -4599,9 +4599,6 @@
 
   <h1>LeetCode 516.最长回文子序列</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 123 个字 :fontawesome-solid-code: 39 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：回文子序列和LCS的做法比较相似，s[i] = s[j] 时，状态转移方程为 dp[i][j] = dp[i + 1][j - 1] + 2。
 否则为 dp[i][j] = max{dp[i + 1][j], dp[i][j - 1]} 即不选 s[i] 或者不选 s[j]。</p>
 <p>dp[i][j] 代表从 s[i] 到 s[j] 的回文子序列最大长度，可知 i 的转移顺序从 n - 1 到 0，j 的转移顺序从 i + 1 到 n - 1。</p>

@@ -4599,9 +4599,6 @@
 
   <h1>PAT A1068 Find More Coins</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 276 个字 :fontawesome-solid-code: 43 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：本题为0-1背包的变形版，求0-1背包的最小字典序问题。</p>
 <p>其中 dp[i][j] 代表从 1 ~ i 号硬币中选择，在最大支付额度为 j 的条件下能支付的最大金额。</p>
 <p>由于本题中负重和价值为同一数据，由状态转移方程 dp[i][j] = max{dp[i-1][j], dp[i-1][j - coins[i]] + coins[i]} 知其最大金额不会超出最大额度。</p>

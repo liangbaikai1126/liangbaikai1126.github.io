@@ -4597,9 +4597,6 @@
 
   <h1>PAT A1103 Integer Factorization</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 54 个字 :fontawesome-solid-code: 49 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：先对存储因子的fac数组进行预处理，比如假设 p = 2，可得 fac[0] = 0, fac[1] = 1, fac[2] = 4 等。</p>
 <p>直接预处理至fac[i] &gt;= n，再通过DFS进行搜索求出最优解。 
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span>

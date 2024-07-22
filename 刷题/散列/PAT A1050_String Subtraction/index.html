@@ -4597,9 +4597,6 @@
 
   <h1>PAT A1050 String Subtraction</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 74 个字 :fontawesome-solid-code: 19 行代码 
-</div>
 <p><strong>思路</strong>：将 s2 的每个字符统计到哈希表中，再逐个遍历 s1 中的字符。若 s1 中字符在哈希表中未出现过则输出。注意可见 ASCII 码范围为 32 - 126，故只需开辟大小为 128 的 bool 数组作为哈希表即可。</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="cpf">&lt;string&gt;</span>

@@ -4597,9 +4597,6 @@
 
   <h1>PAT A1010 Radix</h1>
 
-<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 140 个字 :fontawesome-solid-code: 60 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
-</div>
 <p><strong>思路</strong>：本题使用二分法来查找答案进制数字，先将已经确定进制的输入 N1 转化为十进制，再将待确定进制的输入 N2 二分查找转化为十进制。</p>
 <p>需要注意使用 long long 类型来避免溢出问题。</p>
 <p>最重要的是确定上界和下界，下界为 N2 的各位中最大值 + 1，上界为 N1 的十进制值和下界二者中取最大值。注意两个输入数据相同时，输入给出的 radix 即为目标进制。 </p>
