@@ -4597,6 +4597,9 @@
 
   <h1>PAT A1048 Find Coins</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 102 个字 :fontawesome-solid-code: 26 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：由于本题中 M &lt;= 1000，因此 哈希表的大小只需要大于 1000，而非题中给出的 N 的最大值 100000，之后便为经典题两数之和的散列解法。注意到若存在多对答案应该按字典序的优先级进行输出，因此选择从 0 开始遍历而非输入的第一个数字开始进行遍历。</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span>

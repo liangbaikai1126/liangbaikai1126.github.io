@@ -4597,6 +4597,9 @@
 
   <h1>PAT A1033 To Fill or Not to Fill</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 147 个字 :fontawesome-solid-code: 70 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：注意根据贪心策略，将加油站根据距离的远近进行排序。由于初始油箱为空，若最初的加油站距离不为 0，则无法到达目的地。</p>
 <p>从 0 号加油站开始遍历，遍历能到达且油价最低（除了当前油价）的加油站，设置为目的加油站。</p>
 <p>若遍历到第一个小于当前油价的加油站 A，立刻结束遍历，因为可以在当前加油站加到刚好到 A 的油量，到达 A 之后使用的油价格更低。</p>

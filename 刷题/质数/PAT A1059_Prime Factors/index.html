@@ -4597,6 +4597,9 @@
 
   <h1>PAT A1059 Prime Factors</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 102 个字 :fontawesome-solid-code: 62 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：对int范围内的整数进行质因数分解，采用打质数表法。</p>
 <p>注意由于前10个质数乘积已经超过int最大值范围，只需要开辟Factors大小为10来记录每个质数及其重复次数。</p>
 <p>而由于质因子关于sqrt(n)的对称性质，若当前质因子&gt;sqrt(n)时，可判断n本身即为质数。</p>

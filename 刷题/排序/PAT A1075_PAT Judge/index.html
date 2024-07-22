@@ -4597,6 +4597,9 @@
 
   <h1>PAT A1075 PAT Judge</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 167 个字 :fontawesome-solid-code: 78 行代码 :material-clock-time-two-outline: 预计阅读时间 2 分钟
+</div>
 <p><strong>思路</strong>：本题进行排序时，注意一条提交记录中，if 和 else if 的判断容易混淆，使用 if 更方便进行各种条件的判断。</p>
 <p>此外，使用 flag 可以标志是否需要输出，而非通过单独判断 score 是否全为 0 或 -1。因为本题中第一次提交如果编译未通过，需要把分数赋值为 0。故只有当提交记录中的得分 &gt;= 0 时，才可以设置 flag == true。</p>
 <p>由于提交满分后仍会有低分提交出现，在处理输入时，需要设置最高得分为本题最终得分，最后单独统计总分。</p>

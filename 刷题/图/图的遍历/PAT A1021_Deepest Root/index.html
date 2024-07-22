@@ -4599,6 +4599,9 @@
 
   <h1>PAT A1021 Deepest Root</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 148 个字 :fontawesome-solid-code: 85 行代码 :material-clock-time-two-outline: 预计阅读时间 2 分钟
+</div>
 <p><strong>思路</strong>：首先利用并查集确定是否能够构成一棵树，即整个图只有一个father。</p>
 <p>由于图连通且有n个结点，边数为n-1，可知一定能构成一棵树。</p>
 <p>选取任意结点进行DFS得到最大高度的端点，一定为候选的Deepest Root结点，称作集合A。再次从这些集合A的某一个结点出发，得到最大高度的端点集合称作集合B。</p>

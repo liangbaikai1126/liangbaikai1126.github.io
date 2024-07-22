@@ -4597,6 +4597,9 @@
 
   <h1>PAT A1046 Shortest Distance</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 61 个字 :fontawesome-solid-code: 26 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：预处理从 1 号结点到 N 号节点的距离之和，另外使用 dist 数组，dist[i - 1] 代表 1 号结点到 i 号结点的距离。
 故 dist(left, right) (left &lt; right) 可以表示成 dist[right - 1] - dist[left - 1]。</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>

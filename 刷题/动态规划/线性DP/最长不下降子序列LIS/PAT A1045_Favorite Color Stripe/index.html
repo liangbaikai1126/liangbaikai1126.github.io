@@ -4601,6 +4601,9 @@
 
   <h1>PAT A1045 Favorite Color Stripe</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 116 个字 :fontawesome-solid-code: 65 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：先将喜欢的长度为 M 的颜色序列映射到 0 ~ M-1，之后直接将不喜欢的颜色序列删去，重新整理得到映射后存留的颜色序列a，此时存留的序列一定都是喜欢的颜色。</p>
 <p>再按照LIS的模板，dp[i]代表a[i]结尾的最长序列，状态转移方程为dp[i] = max{dp[j]} + 1, 0 &lt; j &lt; i，且满足a[j] &lt;= a[i]即不递减。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//LIS</span>

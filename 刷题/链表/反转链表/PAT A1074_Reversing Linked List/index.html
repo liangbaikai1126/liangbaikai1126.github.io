@@ -4599,6 +4599,9 @@
 
   <h1>PAT A1074 Reversing Linked List</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 146 个字 :fontawesome-solid-code: 52 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：由于PAT输入数据的特殊性，本题考虑用静态链表来实现。</p>
 <p>注意输入数据中可能有无效的结点，因此需要县遍历一次并且确定有效结点数order，并且为每个有效结点附上顺序标记。</p>
 <p>根据顺序标记进行排序后直接对静态链表数组中前order个结点进行输出，每k个结点倒序输出，最后一组若不满足k个结点则按正常顺序输出。</p>

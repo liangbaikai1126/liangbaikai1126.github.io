@@ -4599,6 +4599,9 @@
 
   <h1>PAT A1072 Gas Station</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 103 个字 :fontawesome-solid-code: 80 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：注意首先加油站必须满足到达所有房屋的距离不超过Ds，在此基础上，要使最近的距离最大。</p>
 <p>当出现多个最近距离最大的解的时候，选择平均距离最小的解，优先选择索引更小的位置。使用M次Dijkstra算法将M个加油站位置全部遍历一遍可得到答案。</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>

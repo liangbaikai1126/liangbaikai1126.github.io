@@ -4601,6 +4601,9 @@
 
   <h1>PAT A1045 Favorite Color Stripe</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 89 个字 :fontawesome-solid-code: 27 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：本题为 LCS 模板题的变形。原本 LCS 状态转移方程中，若 A[i] == B[j]，则 dp[i][j] = dp[i - 1][j - 1] + 1（可证明）。</p>
 <p>由于本题中可以产生重复元素匹配，此时转移方程变为 dp[i][j] = max{dp[i - 1][j], dp[i][j - 1]} + 1。</p>
 <p>边界：dp[i][0] = dp[0][j] = 0 (0 &lt;= i &lt;= n, 0 &lt;= j &lt;= n)</p>

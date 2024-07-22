@@ -4597,6 +4597,9 @@
 
   <h1>PAT A1098 Insertion or Heap Sort</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 126 个字 :fontawesome-solid-code: 84 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：本题考察堆排序的具体过程。注意题目给出初始序列不包含在中间序列里。堆排序时，若要进行递增排序，首先应该从最后一个非叶结点开始，将其与键值更大的子节点进行互换调整，类似于建立大根堆。建堆之后，每次将堆顶元素放到堆的末尾，将堆大小减一，重复这个过程直到堆的大小为1，排序完成。
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span>
 <span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span>

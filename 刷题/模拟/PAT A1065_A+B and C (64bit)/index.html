@@ -4597,6 +4597,9 @@
 
   <h1>PAT A1065 A+B and C (64bit)</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 59 个字 :fontawesome-solid-code: 22 行代码 
+</div>
 <p><strong>思路</strong>：简单的溢出判断题，由于 A B C 均处于 long long 的数据范围内。</p>
 <p>如果 A + B 的真值大于 long long 上限，则 A + B 的真值一定大于 C，此时 A &gt; 0, B &gt; 0, A + B &lt; 0</p>
 <p>如果 A + B 的真值小于 long long 下限，则 A + B 的真值一定小于 C，此时 A &lt; 0, B &lt; 0, A + B &gt; 0

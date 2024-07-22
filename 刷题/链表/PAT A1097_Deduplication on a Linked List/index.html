@@ -4597,6 +4597,9 @@
 
   <h1>PAT A1097 Deduplication on a Linked List</h1>
 
+<div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+:material-circle-edit-outline: 约 132 个字 :fontawesome-solid-code: 56 行代码 :material-clock-time-two-outline: 预计阅读时间 1 分钟
+</div>
 <p><strong>思路</strong>：遍历给出的静态链表，通过设置标记数组记录每个键值是否已经出现过。</p>
 <p>每个结点赋予一个order排序值，初始时所有结点的order初始化为2*maxn，未出现过的键值结点赋值valid从0开始，最终值为有效结点的数量。</p>
 <p>出现过要被删除的结点键值按照removed + maxn进行赋值，removed从0开始，最终值为被删除的结点数量。调用sort按照order进行排序。
