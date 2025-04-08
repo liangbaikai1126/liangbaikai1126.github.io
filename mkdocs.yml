@@ -202,6 +202,7 @@ nav:
     - WSL安装教程: 其他/Win11家庭版配置WSL2/1.md
     - Git相关问题: 其他/Git相关/1.md
     - Conda相关问题: 其他/Conda相关/1.md
+    - psbody安装: 其他/psbody安装/1.md
 
 markdown_extensions:
   - toc:
