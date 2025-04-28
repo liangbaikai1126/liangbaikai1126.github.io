@@ -204,6 +204,7 @@ nav:
     - Git相关问题: 其他/Git相关/1.md
     - Conda相关问题: 其他/Conda相关/1.md
     - psbody安装: 其他/psbody安装/1.md
+    - WSL2终端代理配置Clash: 其他/WSL2终端代理配置Clash/1.md
 
 markdown_extensions:
   - toc:
