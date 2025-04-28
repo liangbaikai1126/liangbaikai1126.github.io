@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://liangbaikai1126.github.io/%E5%85%B6%E4%BB%96/Conda%E7%9B%B8%E5%85%B3/1/">
+        <link rel="canonical" href="https://liangbaikai1126.github.io/%E5%85%B6%E4%BB%96/WSL2%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AEClash/1/">
       
       
-        <link rel="prev" href="../../Git%E7%9B%B8%E5%85%B3/1/">
+        <link rel="prev" href="../../psbody%E5%AE%89%E8%A3%85/1/">
       
-      
-        <link rel="next" href="../../psbody%E5%AE%89%E8%A3%85/1/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
@@ -25,7 +23,7 @@
     
     
       
-        <title>Conda相关问题 - 开的博客</title>
+        <title>WSL2终端代理配置Clash - 开的博客</title>
       
     
     
@@ -124,7 +122,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conda-相关问题" class="md-skip">
+        <a href="#wsl2-终端代理配置-clash" class="md-skip">
           跳转至
         </a>
       
@@ -157,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Conda相关问题
+              WSL2终端代理配置Clash
             
           </span>
         </div>
@@ -5039,32 +5037,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Conda相关问题
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Conda%E7%9B%B8%E5%85%B3/1/" class="md-nav__link">
         
   
   
@@ -5075,44 +5051,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#miniconda3-在-ubuntu-环境下的安装" class="md-nav__link">
-    <span class="md-ellipsis">
-      Miniconda3 在 Ubuntu 环境下的安装
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#终端自动启动-conda-base-环境" class="md-nav__link">
-    <span class="md-ellipsis">
-      终端自动启动 Conda Base 环境
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5145,10 +5083,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../WSL2%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AEClash/1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    WSL2终端代理配置Clash
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -5159,6 +5119,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-准备条件" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. 准备条件
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5198,18 +5187,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#miniconda3-在-ubuntu-环境下的安装" class="md-nav__link">
+  <a href="#0-准备条件" class="md-nav__link">
     <span class="md-ellipsis">
-      Miniconda3 在 Ubuntu 环境下的安装
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#终端自动启动-conda-base-环境" class="md-nav__link">
-    <span class="md-ellipsis">
-      终端自动启动 Conda Base 环境
+      0. 准备条件
     </span>
   </a>
   
@@ -5234,20 +5214,91 @@
   
 
 
-<h1 id="conda-相关问题">Conda 相关问题<a class="headerlink" href="#conda-相关问题" title="Permanent link">&para;</a></h1>
-<h2 id="miniconda3-在-ubuntu-环境下的安装">Miniconda3 在 Ubuntu 环境下的安装<a class="headerlink" href="#miniconda3-在-ubuntu-环境下的安装" title="Permanent link">&para;</a></h2>
-<p>在 Ubuntu 环境下一般使用命令来获取 Miniconda3 的安装包</p>
-<p>在终端中输入下列命令来获取最新版本的 Miniconda3</p>
-<p><code>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</code></p>
-<p>在下载完毕之后，可能会遇到执行权限的问题，需要给安装包添加可执行权限</p>
-<p><code>sudo chmod +x Miniconda3-latest-Linux-x86_64.sh</code></p>
-<p>添加完权限之后，即可运行安装脚本</p>
-<p><code>./Miniconda3-latest-Linux-x86_64.sh</code></p>
-<h2 id="终端自动启动-conda-base-环境">终端自动启动 Conda Base 环境<a class="headerlink" href="#终端自动启动-conda-base-环境" title="Permanent link">&para;</a></h2>
-<p>在安装了 Conda 后，有时打开终端会自动激活 Conda Base 环境，如下图所示</p>
-<p><img alt="" src="../image/CondaBase.png" /></p>
-<p>要取消自动激活环境的功能，只需要在终端中输入 </p>
-<p><code>conda config --set auto_activate_base false</code></p>
+<h1 id="wsl2-终端代理配置-clash">WSL2 终端代理配置 Clash<a class="headerlink" href="#wsl2-终端代理配置-clash" title="Permanent link">&para;</a></h1>
+<h2 id="0-准备条件">0. 准备条件<a class="headerlink" href="#0-准备条件" title="Permanent link">&para;</a></h2>
+<p>笔者使用的操作系统为 Windows 11 家庭版 24H2，CPU 为 AMD Ryzen 系列，WSL2 安装的 Linux 发行版为 Ubuntu-22.04。</p>
+<p>默认已经安装好 WSL2，以及相应的魔法软件 Clash。</p>
+<p><img alt="" src="../image/1.png" /></p>
+<p>上图中打开 <strong>Allow LAN</strong> 以及 <strong>System Proxy</strong>，默认端口（Port）为 7890，请根据情况自行调整。</p>
+<p>在终端中创建文件 <code>proxy.sh</code>，复制下列内容，运行即可。</p>
+<p>参考的运行指令如下，其中文件路径自行调整</p>
+<p><code>source ~/proxy.sh set</code>   打开代理</p>
+<p><code>source ~/proxy.sh test</code>  测试是否成功代理</p>
+<p><code>source ~/proxy.sh unset</code> 取消代理</p>
+<p>此外，也可以在 bash 配置文件 <code>.bashrc</code> 中添加 <code>alias proxy="source ~/proxy.sh"</code>来简化使用。</p>
+<p>简化后指令如下（记得使用 <code>source .bashrc</code> 命令来应用配置文件）</p>
+<p><code>proxy set</code>   打开代理</p>
+<p><code>proxy test</code>  测试是否成功代理</p>
+<p><code>proxy unset</code> 取消代理</p>
+<div class="admonition note">
+<p class="admonition-title">注意</p>
+<p>脚本中使用了 <code>ip route</code> 来获取 WSL2 的 IP 地址。以往通常使用的 <code>cat /etc/resolv.conf</code> 中保存的 nameserver 来作为 IP 地址已经不再适用。</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="nv">hostip</span><span class="o">=</span><span class="k">$(</span>ip<span class="w"> </span>route<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>default<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $3}&#39;</span><span class="k">)</span>
+<span class="nv">wslip</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-I<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span>
+<span class="nv">port</span><span class="o">=</span><span class="m">7890</span>
+
+<span class="nv">PROXY_HTTP</span><span class="o">=</span><span class="s2">&quot;http://</span><span class="si">${</span><span class="nv">hostip</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">PROXY_SOCKS5</span><span class="o">=</span><span class="s2">&quot;socks5://</span><span class="si">${</span><span class="nv">hostip</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&quot;</span>
+
+set_proxy<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">http_proxy</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROXY_HTTP</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">HTTP_PROXY</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROXY_HTTP</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">https_proxy</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROXY_HTTP</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">HTTPS_PROXY</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROXY_HTTP</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">all_proxy</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROXY_SOCKS5</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">ALL_PROXY</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROXY_SOCKS5</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="w">  </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.proxy<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROXY_HTTP</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>https.proxy<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROXY_HTTP</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Terminal proxy has been opened.&quot;</span>
+<span class="o">}</span>
+
+unset_proxy<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">unset</span><span class="w"> </span>http_proxy
+<span class="w">  </span><span class="nb">unset</span><span class="w"> </span>HTTP_PROXY
+
+<span class="w">  </span><span class="nb">unset</span><span class="w"> </span>https_proxy
+<span class="w">  </span><span class="nb">unset</span><span class="w"> </span>HTTPS_PROXY
+
+<span class="w">  </span><span class="nb">unset</span><span class="w"> </span>all_proxy
+<span class="w">  </span><span class="nb">unset</span><span class="w"> </span>ALL_PROXY
+
+<span class="w">  </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--unset<span class="w"> </span>http.proxy
+<span class="w">  </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--unset<span class="w"> </span>https.proxy
+<span class="w">  </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--unset<span class="w"> </span>http.https://github.com.proxy
+<span class="w">  </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--unset<span class="w"> </span>https.https://github.com.proxy
+
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Terminal proxy has been closed.&quot;</span>
+<span class="o">}</span>
+
+test_connection<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Host IP: </span><span class="si">${</span><span class="nv">hostip</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;WSL IP: </span><span class="si">${</span><span class="nv">wslip</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Test Connection: connecting to Google...&quot;</span>
+<span class="w">  </span><span class="nv">res</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-I<span class="w"> </span>-s<span class="w"> </span>--connect-timeout<span class="w"> </span><span class="m">5</span><span class="w"> </span>-m<span class="w"> </span><span class="m">5</span><span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;%{http_code}&quot;</span><span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>https://www.google.com<span class="k">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">res</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Terminal proxy setup succeeded!&quot;</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Terminal proxy setup failed!&quot;</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;set&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>set_proxy
+<span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;unset&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>unset_proxy
+<span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>test_connection
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Unsupported arguments.&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
 
 
 
@@ -5270,7 +5321,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月8日 11:09:48">2025年4月8日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月28日 13:31:42">2025年4月28日</span>
   </span>
 
     
@@ -5280,7 +5331,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2024年10月29日 16:30:23">2024年10月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月28日 13:31:42">2025年4月28日</span>
   </span>
 
     
